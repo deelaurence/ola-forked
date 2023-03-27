@@ -1,0 +1,148 @@
+.header-section {
+    position: relative;
+    z-index: 4;
+    height: 100vh;
+    background:$primaryColor;
+    flex-direction: column;
+    display: flex;
+    gap: 2;
+    //to rotate maybe in mobile
+    // transform: rotateZ(90deg);
+    // transform-origin: 32% 40%;
+    // height: 100vw;
+    // width: 100vh;
+    
+    .bg {
+        display: none;
+    }
+
+    .row {
+        height: 25%;
+        border-top: 2px solid $secondaryColor;
+        position: relative;
+        width: 100vw;
+        //To rotate in mobile
+        // width: 100vh;
+        overflow: hidden;
+
+        .img-1{
+         position: absolute;
+            height: 100vh;
+        }
+        .img-2{
+            height: 100vh;
+            position: absolute;
+            top: -105%;
+        }
+        .img-3{
+            height: 100vh;
+            position: absolute;
+            top: -225%;
+        }
+        .img-4{
+            height: 100vh;
+            position: absolute;
+            top: -325%;
+            
+        }
+        .blind{
+            height: 100%;
+            // border: 2px solid red;
+            width: 100%;
+            position: absolute;
+            background-color: $primaryColor;
+            z-index: 99;
+        }
+        h2 {
+            font-size: 40vw;
+            font-weight: 400 ;
+            position: relative;
+            z-index: 99;
+            // display: none;
+        }
+
+        p {
+            font-size: 1rem;
+            position: relative;
+            z-index: 99;
+            font-weight: 400;
+        }
+    }
+    .col-end{
+        position: relative;
+    h2{
+        position: absolute;
+        right: 0;
+        top: 10px;
+    }
+    }
+
+}
+
+@include for-phones {}
+
+
+
+@include for-tablet-landscape-up {
+    h2{
+        font-size: 9vw !important;
+    }
+}
+
+@include for-desktop-up {
+    .header-section {
+        overflow: hidden;
+        display: none;
+
+
+        .bg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: scaleAnimation 4s ease-in-out infinite;
+
+            @keyframes scaleAnimation {
+                0% {
+                    transform: scale(1)
+                }
+
+                50% {
+                    transform: scale(1.2)
+                }
+
+                100% {
+                    transform: scale(1)
+                }
+
+            }
+        }
+
+        .row {
+            padding: 0.5rem 17px;
+            height: 170px;
+            border-bottom: 1px solid $secondaryColor;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            display: none;
+            
+
+            h2 {
+                display: none;
+                font-size: 2vw !important;
+            }
+
+            p {
+                display: block;
+                font-size: 1.875rem;
+                line-height: 1;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+// @include for-big-desktop-up {}

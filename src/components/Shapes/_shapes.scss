@@ -1,0 +1,149 @@
+.shapes-section {
+    @include grid(2, 1fr, 0);
+    padding-top: 80px;
+
+
+    .single-rectangle {
+        @include flex(center, center, row);
+        padding: 3rem 0;
+
+        .box {
+            width: 160px;
+            height: 56px;
+            background-color: $secondaryColor;
+        }
+    }
+
+    .double-squares {
+        @include flex(center, center, row);
+        padding: 3rem 0;
+
+        .square {
+            width: 80px;
+            height: 50px;
+            background-color: $secondaryColor;
+            margin: 0 1px;
+        }
+    }
+
+
+    .double-circles {
+        @include flex(center, center, row);
+        border-top: 1px solid $secondaryColor;
+        border-bottom: 1px solid $secondaryColor;
+        padding: 3rem 0;
+
+        .circle {
+            width: 80px;
+            height: 80px;
+            background-color: $secondaryColor;
+            margin: 0 1px;
+            border-radius: 55%;
+        }
+    }
+
+
+    .rotating-single-rectangle {
+        border-top: 1px solid $secondaryColor;
+        border-bottom: 1px solid $secondaryColor;
+        @include flex(center, center, row);
+        padding: 3rem 0;
+
+
+        .box {
+            width: 160px;
+            height: 56px;
+            background-color: $secondaryColor;
+        }
+    }
+
+}
+
+@include for-phones {}
+
+@include for-tablet-potrait-up {
+    .shapes-section {
+        .single-rectangle {
+            .box {
+                width: 348px;
+                height: 120px;
+            }
+        }
+
+        .double-squares {
+            .square {
+                width: 174px;
+                height: 120px;
+            }
+        }
+
+
+        .double-circles {
+            .circle {
+                width: 174px;
+                height: 174px;
+            }
+        }
+
+
+        .rotating-single-rectangle {
+            .box {
+                width: 349px;
+                height: 120px;
+            }
+        }
+
+    }
+}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .shapes-section {
+        @include verticalLines;
+        @include grid(4, 1fr, 0);
+        border-bottom: 1px solid $secondaryColor;
+        border-top: 1px solid $secondaryColor;
+        padding: 3rem 0;
+        position: relative;
+        align-content: center;
+
+
+        .single-rectangle {
+            .box {
+                width: 282px;
+                height: 98px;
+            }
+        }
+
+        .double-squares {
+            .square {
+                width: 141px;
+                height: 98px;
+            }
+        }
+
+
+        .double-circles {
+            border: none;
+
+            .circle {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+
+        .rotating-single-rectangle {
+            border: none;
+
+            .box {
+                width: 284px;
+                height: 96px;
+            }
+        }
+
+    }
+}
+
+@include for-big-desktop-up {}

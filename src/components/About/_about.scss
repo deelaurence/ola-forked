@@ -1,0 +1,96 @@
+.about-section {
+    padding: 70px 0;
+
+    .top {
+        padding: 80px 14px;
+        position: relative;
+        video{
+            max-width: 92vw;
+        }
+        h1 {
+            font-size: 15vw;
+            width: 100%;
+        }
+    }
+
+    .bottom {
+        @include flex(flex-start, space-between, column);
+
+        article {
+            width: 100%;
+            border-top: 1px solid $secondaryColor;
+            padding: 1rem 14px;
+
+            p {
+                position: relative;
+                font-size: 1.25rem;
+                z-index: 4;
+                line-height: 1.5;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid $secondaryColor;
+                padding-bottom: 60px;
+            }
+        }
+    }
+}
+
+@include for-phones {
+    .about-section {
+        .top {
+            padding: 80px 24px;
+        }
+
+        .bottom {
+            article {
+                padding: 1rem 24px;
+            }
+        }
+    }
+}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .about-section {
+        padding-top: 0;
+
+        .top {
+            padding: 80px 24px;
+            @include verticalLines;
+
+            h1 {
+                font-size: 5vw;
+                width: 60%;
+                padding: 3rem 0
+            }
+        }
+
+        .bottom {
+            @include flex(flex-start, space-between, row);
+            border-top: 1px solid $secondaryColor;
+            padding: 0 24px;
+            min-height: 300px;
+
+            article {
+                width: 50%;
+                padding: 1rem;
+                border: none;
+
+                p {
+                    font-size: 1.625rem;
+                }
+
+                &:last-child {
+                    border: none;
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@include for-big-desktop-up {}

@@ -1,0 +1,68 @@
+// MEDIA QUERIES
+@mixin for-phones {
+    @media screen and (min-width: 361px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-potrait-up {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media screen and (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media screen and (min-width: 1800px) {
+        @content;
+    }
+}
+
+
+@mixin flex($align, $justify, $direction) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin grid($num, $width, $gap) {
+    display: grid;
+    grid-template-columns: repeat($num, $width);
+    grid-gap: $gap;
+}
+
+// VERTICAL LINES
+@mixin verticalLines () {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: calc(100vw - 26%);
+        width: 1px;
+        height: 100%;
+        background-color: $secondaryColor;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: calc(100vw - 26%);
+        width: 1px;
+        height: 100%;
+        background-color: $secondaryColor;
+    }
+}

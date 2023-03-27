@@ -1,0 +1,44 @@
+.info-section {
+    padding: 3rem 14px;
+    border-top:2px solid $secondaryColor;
+    overflow: hidden;
+    display: flex;
+    h1 {
+      overflow: hidden;
+        font-size: 8vw;
+        font-weight: 400;
+        line-height: 1.2;
+        width: 100vw;
+        z-index: 5;
+    }
+    .info2{
+        position: relative;
+        width: 50vw;
+        h1{
+            position: relative;
+            right:50vw;
+            top:0px;
+            height: 100%;
+            width: 100vw;
+        }
+    }
+    .info1{
+        position: relative;
+        width: 50vw;
+    }
+}
+
+@include for-phones {}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .info-section {
+        padding: 10rem 17px;
+        @include verticalLines;
+    }
+}
+
+@include for-big-desktop-up {}

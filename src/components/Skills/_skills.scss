@@ -1,0 +1,53 @@
+.skills-section {
+    padding: 1rem 0;
+    position: relative;
+    z-index: 5;
+    background-color: $primaryColor;
+    border-bottom: 1px solid $secondaryColor;
+    border-top: 1px solid $secondaryColor;
+
+    h2 {
+        font-size: 1.875rem;
+        padding: 1rem 14px;
+        font-weight: 400;
+
+        &:last-child {
+            border-top: 1px solid $secondaryColor;
+        }
+    }
+}
+
+@include for-phones {}
+
+@include for-tablet-potrait-up {
+    .skills-section {
+        @include flex(center, flex-start, row);
+        border-bottom: 1px solid $secondaryColor;
+
+        h2 {
+            border: none;
+
+            &:last-child {
+                min-width: 80%;
+                margin-left: 45px;
+                border: none;
+            }
+        }
+    }
+}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .skills-section {
+        border-bottom: none;
+
+        h2 {
+            font-size: 4vw;
+            padding: 1rem 17px;
+            border: none;
+        }
+    }
+}
+
+@include for-big-desktop-up {}

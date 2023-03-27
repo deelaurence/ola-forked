@@ -1,0 +1,230 @@
+.projects-section {
+    background-color: #674825;
+
+    .wrapper {
+        overflow: visible !important;
+        position: relative;
+        padding-top: 70px;
+
+        .title {
+            padding: 1rem 0;
+            overflow: visible !important;
+            text-align: center;
+            white-space: nowrap;
+            font-size: 22vw;
+            z-index: 400;
+            position: relative;
+        }
+
+        .mini-grid-desktop {
+            display: none;
+        }
+    }
+
+    .projects {
+        position: relative;
+        z-index: 4;
+        background-color: #674825;
+
+        .mob-project {
+            padding: 1rem 14px;
+            border-top: 1px solid #EEE9CC;
+
+            .title {
+                font-size: 1.3rem;
+                font-weight: 400;
+                position: relative;
+                margin-bottom: 10px;
+
+                @include flex(center, space-between, row);
+
+                span {
+                    transform: rotate(180deg);
+                    transition: 0.2s ease-in-out all;
+
+                    &.active {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+
+            .info {
+                transition: 0.5s all linear;
+                opacity: 0;
+                height: 0;
+                overflow: hidden;
+
+                .row {
+                    @include flex(center, space-between, row);
+                }
+
+                h4 {
+                    font-weight: 500;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+
+                &.active {
+                    opacity: 1;
+                    height: 400px;
+                }
+            }
+        }
+
+        .desktop-project {
+            display: none;
+        }
+
+        .mob-project,
+        .desktop-project {
+            .slides {
+                height: 300px;
+                position: relative;
+                margin-top: 20px;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+                    transition: 0.4s ease-in-out opacity;
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+
+                .pagination {
+                    position: absolute;
+                    right: 20px;
+                    bottom: 0;
+                    height: 40px;
+                    @include flex(center, space-between, row);
+
+                    span {
+                        border: 1px solid #fff;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        margin: 0 5px;
+
+                        &.active {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include for-phones {
+    .projects-section {
+        .projects {
+            .mob-project {
+                padding: 1rem 17px;
+            }
+        }
+    }
+}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .projects-section {
+        .wrapper {
+            @include verticalLines;
+
+            .title {
+                font-size: 22vw;
+            }
+
+            .mini-grid-desktop {
+                @include grid(3, 650px 350px 300px, 40px);
+
+                h3 {
+                    padding: 1rem;
+                }
+            }
+        }
+
+        .projects {
+            .mob-project {
+                display: none;
+            }
+
+            .desktop-project {
+                border-top: 2px solid $secondaryColor;
+                display: block;
+
+                .brief {
+                    @include grid(3, 650px 320px 250px, 40px);
+                    padding: 1rem;
+                    transition: linear all 0.2s;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: $secondaryColor;
+                        color: $primaryColor;
+                    }
+
+                    .proj-date {
+                        @include flex(flex-start, space-between, row);
+                        padding-left: 30px;
+
+                        span {
+                            transform: rotate(180deg);
+                            transition: 0.2s ease-in-out all;
+
+                            &.active {
+                                transform: rotate(360deg);
+                            }
+                        }
+                    }
+
+                }
+
+                .details {
+                    display: none;
+                    margin-top: 20px;
+                    padding: 1rem;
+                    height: 0;
+                    overflow: hidden;
+                    opacity: 0;
+                    transition: linear all 0.5s;
+
+                    .slides {
+                        height: 340px;
+                    }
+
+                    .more-info {
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+
+                    &.active {
+                        @include grid(2, 650px 320px, 40px);
+                        height: 400px;
+                        opacity: 1;
+                    }
+                }
+
+                &:last-child {
+                    &:hover {
+                        border-bottom: 2px solid $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include for-big-desktop-up {}
