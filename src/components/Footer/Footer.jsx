@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { navLinks } from '../../data';
 const Footer = () => {
   return (
     <footer>
@@ -7,32 +7,34 @@ const Footer = () => {
         <div className='item-1'>
           <h3>Contacts</h3>
           <ul>
-            <li>MAELANLEMEUR@GMAIL.COM</li>
-            <li>INSTAGRAM</li>
-            <li>BEHANCE</li>
+            <a href={`mailto:${navLinks.mail}`}>
+              <li>DEVERENCECONNECT@GMAIL.COM</li>
+            </a>
+            <a href={navLinks.github}>
+             <li>GITHUB</li>
+            </a>
+            <a href={navLinks.github}>
+              <li><em>LinkedIn</em></li>
+            </a>
           </ul>
         </div>
         <div className='item-2'>
-          <h3>Crédits</h3>
+          <h3>Othér Links</h3>
           <div className='row'>
             <ul>
-              <li>QUENTIN HOCDÉ</li>
-              <li>MAËLAN LE MEUR</li>
-              <li>PANGRAM PANGRAM</li>
+              <a href={navLinks.blog}>
+                <li>MY BLOG</li>
+              </a>
+              <a href={navLinks.resume}>
+                <li>VIEW MY RESUME</li>
+              </a>
             </ul>
-            <ul>
-              <li>DÉVELOPPEMENT</li>
-              <li>DA & DESIGN</li>
-              <li>TYPOGRAPHIE</li>
-            </ul>
+           
           </div>
-        </div>
-        <div className='item-3'>
-          <h3>Contacts</h3>
         </div>
       </div>
       <div className='bottom'>
-        <p>WEBSITE CREATED IN 2023 AT EXTENSION (DO IT YOURSELF) , BRUSSELS.</p>
+        <p>WEBSITE DEVELOPED IN 2024 WITH REACT BY ME, DESIGN INSPIRED BY MaELEN LE MEur</p>
       </div>
     </footer>
   );

@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import MenuIcon from './MenuIcon';
+import {HiMenuAlt3} from "react-icons/hi"
+import {IoClose} from "react-icons/io5"
+import { Link } from 'react-router-dom';
+import { navLinks } from '../../data';
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+  const [animate, setAnimate] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(0);
 
   useEffect(() => {
     const monitorScrollHeight = () => {
       setScrollHeight(window.scrollY);
+
     };
     window.addEventListener(`scroll`, monitorScrollHeight);
     return () => {
@@ -21,28 +28,44 @@ const Navbar = () => {
       }`}
     >
       <div className='container'>
-        <div className='logo'>Olá</div>
+        <Link to={'/'} className='logo'>Odúnayò</Link>
+        
         <div className='desktop-links'>
           <ul>
-            <li>VOUSVOUS </li>
-            <li>RÉALISATION</li>
-            <li>ÉCRIVEZ-MOI</li>
+            <a>MY BLOG </a>
+            <a>ABOUT ME</a>
+            <a>RÉSUMÉ</a>
           </ul>
         </div>
-        <div className='hambuger' onClick={() => setShowNavbar(!showNavbar)}>
-          <span className={showNavbar ? `show-nav` : null}></span>
+        <div className='hambuger' onClick={() =>{ 
+            setAnimate(!animate)
+            setShowNavbar(!showNavbar)}
+          }>
+          {!showNavbar?<HiMenuAlt3/>:<IoClose/>}
         </div>
       </div>
       <div className={`mob-nav-links ${showNavbar ? `show-nav` : null}`}>
         <ul>
-          <li>Vous</li>
-          <li>Réalisations</li>
-          <li>Écrivez-moi</li>
+          <li>
+            <a href={navLinks.blog} className={animate?`nav-text`:""}>My blog</a>
+          </li>
+          <li>
+            <a href={navLinks.resume} className={animate?`nav-text1`:""}>Résumé</a>
+          </li>
+          <li>
+            <Link to={"/about"} className={animate?`nav-text2`:""}>About me</Link>
+          </li>
         </ul>
         <ul className='socials'>
-          <li>MAELANLEMEUR@GMAIL.COM</li>
-          <li>INSTAGRAM</li>
-          <li>BEHANCE</li>
+          <li>
+            <a href={`mailto:${navLinks.mail}`} className={animate?`nav-text2`:""}>deverenceconnect@gmail.com</a>
+          </li>
+          <li>
+            <a href={navLinks.blog} className={animate?`nav-text`:""}>Blog</a>
+          </li>
+          <li>
+            <a href={navLinks.linkedIn} className={animate?`nav-text1`:""}>LinkedIn</a>
+          </li>
         </ul>
       </div>
     </nav>

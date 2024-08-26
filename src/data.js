@@ -7,18 +7,51 @@ import slide5 from './assets/slide5.webp';
 
 export const projects = [
   {
-    name: `Mobile Variations`,
+    name: `Project One`,
     desc: `Maxime Van Roy exhibition`,
     moreInfo: `Event design - Print - Digital - Animation - Culture`,
     date: `2022`,
     slides: [slide1, slide2, slide3, slide4, slide5],
-  },
-
+  }
+  ,
   {
-    name: `Desktop Variations`,
+    name: `Project two`,
+    desc: `Lorem stuff here`,
+    moreInfo: `Event design - Print - Digital - Animation - Culture`,
+    date: `2022`,
+    slides: [slide5, slide2, slide4],
+  },
+  ,
+  {
+    name: `Project two`,
+    desc: `Lorem stuff here`,
+    moreInfo: `Event design - Print - Digital - Animation - Culture`,
+    date: `2022`,
+    slides: [slide5, slide2, slide4],
+  },
+  ,
+  {
+    name: `Project two`,
+    desc: `Lorem stuff here`,
+    moreInfo: `Event design - Print - Digital - Animation - Culture`,
+    date: `2022`,
+    slides: [slide5, slide2, slide4],
+  },
+  ,
+  {
+    name: `Project two`,
     desc: `Lorem stuff here`,
     moreInfo: `Event design - Print - Digital - Animation - Culture`,
     date: `2022`,
     slides: [slide5, slide2, slide4],
   },
 ];
+
+
+export const navLinks={
+  linkedIn:'https://www.linkedin.com/in/odunayo-alo-b48586255/',
+  blog:'https://binary-bloggy.onrender.com/',
+  github:'https://github.com/deelaurence',
+  mail:'deverenceconnect@gmail.com',
+  resume:"https://docs.google.com/document/d/1JdojcI3eHX7mpdAkzTI8Yg6w9GURWe_HGsHa3NuwK8c/pub"
+}

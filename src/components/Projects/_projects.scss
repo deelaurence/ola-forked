@@ -35,7 +35,7 @@
                 font-weight: 400;
                 position: relative;
                 margin-bottom: 10px;
-
+                text-transform: uppercase;
                 @include flex(center, space-between, row);
 
                 span {
@@ -52,7 +52,8 @@
                 transition: 0.5s all linear;
                 opacity: 0;
                 height: 0;
-                overflow: hidden;
+                
+                overflow: visible !important;
 
                 .row {
                     @include flex(center, space-between, row);
@@ -63,12 +64,15 @@
                 }
 
                 p {
-                    font-size: 1rem;
+                    font-size: .7rem;
+                    font-weight: 500;
+                    opacity: .8;
                 }
 
                 &.active {
                     opacity: 1;
                     height: 400px;
+                    padding-bottom:0;
                 }
             }
         }
@@ -82,14 +86,22 @@
             .slides {
                 height: 300px;
                 position: relative;
-                margin-top: 20px;
-
+                margin-top: 60px;
+                background: $primaryColor;
+                padding-bottom: 40px;
+                border-top: 20px solid $primaryColor;
+                border-bottom: 50px solid $primaryColor;
+                border-left: 50px solid $primaryColor;
+                border-right: 50px solid $primaryColor;
+                
                 img {
                     position: absolute;
+                    height: auto;
                     top: 0;
                     left: 0;
+                    filter: grayscale(60%);
+                    transform: rotate(0deg) scale(1);
                     right: 0;
-                    bottom: 0;
                     opacity: 0;
                     transition: 0.4s ease-in-out opacity;
 
@@ -101,12 +113,13 @@
                 .pagination {
                     position: absolute;
                     right: 20px;
-                    bottom: 0;
+                    bottom: 40px;
+                    
                     height: 40px;
                     @include flex(center, space-between, row);
 
                     span {
-                        border: 1px solid #fff;
+                        border: 1px solid #777;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%;
@@ -114,7 +127,7 @@
                         margin: 0 5px;
 
                         &.active {
-                            background: #fff;
+                            background: #555;
                         }
                     }
                 }
@@ -168,26 +181,41 @@
                 .brief {
                     @include grid(3, 650px 320px 250px, 40px);
                     padding: 1rem;
+                    font-size: 30px;
                     transition: linear all 0.2s;
                     cursor: pointer;
 
                     &:hover {
-                        background: $secondaryColor;
-                        color: $primaryColor;
+                        // text-decoration: underline;
+                        transform: scale(0.98);
+                        transition: .5s;
+                        // background: $secondaryColor;
+                        // color: $primaryColor;
                     }
 
                     .proj-date {
                         @include flex(flex-start, space-between, row);
                         padding-left: 30px;
-
+                        font-size: 1.5rem !important;
+                        font-weight: 400;
+                        font-style: italic;
                         span {
                             transform: rotate(180deg);
+                            font-size: 2rem;
                             transition: 0.2s ease-in-out all;
 
                             &.active {
                                 transform: rotate(360deg);
                             }
                         }
+                    }
+                    .proj-name {
+                        font-size: 2rem !important;
+                        font-weight: 500;
+                    }
+                    .proj-desc {
+                        font-size: 1rem !important;
+                        font-weight: 400;
                     }
 
                 }
@@ -228,3 +256,19 @@
 }
 
 @include for-big-desktop-up {}
+
+
+.view-details{
+    border: 1px solid $secondaryColor;
+    // padding: 10px 40px;
+    width: fit-content;
+    border-radius: 30px;
+}
+// .slide-cont{
+//     border: 2px solid red;
+//     opacity: .5;
+//     height: 500px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }

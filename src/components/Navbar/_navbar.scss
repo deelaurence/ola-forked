@@ -7,7 +7,7 @@ nav {
     background-color: #1E1915;
     color: #EEE9CC;
     transition: background-color .3s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform: translateY(-100%);
+    // transform: translateY(-100%);
     transition: all linear 0.3s;
 
     .container {
@@ -16,53 +16,16 @@ nav {
 
         .logo {
             width: 50%;
-            font-size: 1.875rem;
+            font-size: 1rem;
             line-height: 1;
-            font-weight: 400;
+            font-weight: 600;
             padding: 1.25rem;
         }
 
         .hambuger {
-            width: 30px;
-            height: 20px;
             position: relative;
             margin-right: 1.25rem;
-            background: transparent;
-            border: none;
-
-            span {
-                position: absolute;
-                top: 50%;
-                left: 0;
-                width: 100%;
-                height: 1px;
-                background-color: $secondaryColor;
-                transition: background-color .3s cubic-bezier(0.215, 0.61, 0.355, 1);
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    right: 0;
-                    left: 0;
-                    background-color: $secondaryColor;
-                    transform: translate3d(0, -6px, 0);
-                    transition: transform .3s cubic-bezier(0.215, 0.61, 0.355, 1);
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    right: 0;
-                    left: 0;
-                    background-color: $secondaryColor;
-                    transform: translate3d(0, 6px, 0);
-                    transition: transform .3s cubic-bezier(0.215, 0.61, 0.355, 1);
-                }
-            }
+            overflow:visible !important;   
         }
 
         .desktop-links {
@@ -98,8 +61,8 @@ nav {
         ul {
             background: $secondaryColor;
             width: 100%;
-            display: none;
-            transition: display 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+            opacity: 0;
+            transition:  1s cubic-bezier(0.645, 0.045, 0.355, 1);
             font-size: 1.875rem;
 
             &:first-child {
@@ -113,7 +76,12 @@ nav {
                 &:first-child {
                     border-top: 1px solid $primaryColor;
                 }
-
+                a{
+                    font-weight: 400;
+                    overflow: visible;
+                    display: block;
+                    // text-transform: uppercase;
+                }
             }
 
             &.socials {
@@ -161,7 +129,8 @@ nav {
             }
 
             ul {
-                display: block;
+                opacity: 1;
+                transition: 1s;
             }
         }
 
@@ -216,3 +185,160 @@ nav {
 }
 
 @include for-big-desktop-up {}
+
+
+
+
+
+/* Define the animation */
+@keyframes slideDown {
+    from {
+      transform: translateY(-70px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-70px);
+      opacity: 0;
+    }
+  }
+  
+  /* Apply the animation to the navbar text */
+  .nav-text {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0; /* Initial state is hidden */
+  }
+  .nav-text1 {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    opacity: 0; /* Initial state is hidden */
+  }
+  .nav-text2 {
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    transition: ease-out;
+    opacity: 0; /* Initial state is hidden */
+  }
+  
+  /* Show the text when the navbar is open */
+  .show-nav .nav-text {
+    animation-name: slideDown;
+    opacity: 1;
+    // animation-delay: .5s;
+}
+  .show-nav .nav-text1 {
+    animation-name: slideDown;
+    opacity: 1;
+    // animation-delay: .5s;
+}
+  .show-nav .nav-text2 {
+    animation-name: slideDown;
+    opacity: 1;
+    // animation-delay: .5s;
+}
+
+
+
+
+/* Hide the text when the navbar is closing */
+.hide-nav .nav-text {
+    animation-name: slideUp;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+  
+
+ 
+
+:root {
+	--bar-bg: #212529;
+}
+
+.menu-icon {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+
+	.menu-icon__cheeckbox {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		cursor: pointer;
+		z-index: 2;
+		-webkit-touch-callout: none;
+		position: absolute;
+		opacity: 0;
+	}
+	div {
+		margin: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: 22px;
+		height: 12px;
+	}
+	span {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: var(--bar-bg, #000);
+		border-radius: 1px;
+		transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+
+		&:first-of-type {
+			top: 0;
+		}
+		&:last-of-type {
+			bottom: 0;
+		}
+	}
+	&.active,
+	.menu-icon__cheeckbox:checked + div {
+		span {
+			&:first-of-type {
+				transform: rotate(45deg);
+				top: 5px;
+			}
+			&:last-of-type {
+				transform: rotate(-45deg);
+				bottom: 5px;
+			}
+		}
+	}
+
+	&.active:hover span:first-of-type,
+	&.active:hover span:last-of-type,
+	&:hover .menu-icon__cheeckbox:checked + div span:first-of-type,
+	&:hover .menu-icon__cheeckbox:checked + div span:last-of-type {
+		width: 22px;
+	}
+
+	&:hover {
+		// no need hover effect on mobile.
+		@media (min-width: 1024px) {
+			span:first-of-type {
+				width: 26px;
+			}
+
+			span:last-of-type {
+				width: 12px;
+			}
+		}
+	}
+}

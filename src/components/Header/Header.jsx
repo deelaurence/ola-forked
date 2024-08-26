@@ -1,165 +1,107 @@
-import React from 'react';
-import headerImg from '../../assets/header-bg.webp';
-import headerImg2 from '../../assets/slide1.webp';
+import React, { useEffect, useState } from 'react';
+import headerImg from '../../assets/myreel.gif';
+import headerImg2 from '../../assets/projects.gif';
 import headerImg3 from '../../assets/slide2.webp';
 import headerImg4 from '../../assets/slide3.webp';
-import { useEffect, useRef, useState } from 'react';
-
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger)
-// import {Scroll}
-    
-
 
 const Header = () => {
-const img1Ref = useRef()
-const img1 = img1Ref.current
-const img2Ref = useRef()
-const img2 = img2Ref.current
-const img3Ref = useRef()
-const img3 = img3Ref.current
-const img4Ref = useRef()
-const img4 = img4Ref.current
-const blind = document.querySelectorAll('.blind')
-const images = [headerImg, headerImg2, headerImg3, headerImg4];
+  const images = [headerImg2, headerImg2, headerImg2, headerImg2];
+  
+  // Arrays for dynamic text data
+  const titles = ["Hi", "Hola", "Hi","Hallo"];
+  const descriptions = ["I use Python", "I use NodeJS", "I use ReactJS", "I use Typescript"];
+  const data=[
+    {
+      title:"Hey.",
+      description:"My name is Odunayo <em>but wait...</em>",
+      image:headerImg,
+      showTitle:false,
+      showDescription:false,
+      showImage:false
+    },
+    {
+      title:"Stack.",
+      description:`I have built 20+ frontends with <em>ReactJS</em>`,
+      image:headerImg2,
+      showTitle:true,
+      showDescription:false,
+      showImage:true
+    },
+    {
+      title:"APIs.",
+      description:"I have engineered and deployed over 30 APIs and business logics with <em>Python</em> and <em>nodeJS</em>",
+      image:headerImg2,
+      showTitle:false,
+      showDescription:true,
+      showImage:true
+    },
+    {
+      title:"Work.",
+      description:"I have an experience of <em>4 years</em> as a developer",
+      image:headerImg2,
+      showTitle:false,
+      showDescription:false,
+      showImage:false
+    },
+  ]
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [count, setCount]=useState(0)
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            if(currentIndex === images.length - 1) {
-                setCurrentIndex(0);
-            } 
-            else {
-                 setCurrentIndex(currentIndex + 1);
-            }
-        }, 3000)
-        
-        return () => clearInterval(intervalId);
-    })
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [currentIndexText, setCurrentIndexText] = useState(0);
+  const [isAnimatingText, setIsAnimatingText] = useState(false);
+
+
+ 
   useEffect(() => {
+      setIsAnimating(true);
+      setIsAnimatingText(true);
+  }, [images.length]);
+  
+  
+  
+  useEffect(() => {
+    
+    const intervalId = setInterval(() => {
+      setIsAnimating(false);
+      
+      setTimeout(() => {
+        setIsAnimating(true);
+      }, 3000); // Same duration as the animation time
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 6000);
 
-    const initiateAnimation = setTimeout(() => {
-            setCount(1)
-        }, 1500)
-        
-        
-        gsap.fromTo(blind, {
-          
-          yPercent:100,
-          scale:1,
-          // skewX:"30deg",
-  
-      },
-          {
-              yPercent:0,
-              skewX:"0deg",
-              duration:1.5,
-              ease:"Power2.easeIn",
-              delay:1.5,
-              repeat:-1,
-              yoyo:true
-          })
-        gsap.fromTo(img1, {
-          // opacity:0,
-          skewX:".5deg",
-          scale:1
-  
-      },
-          {
-              scale:1.2,
-              skewX:"0deg",
-              opacity:1,
-              ease:"Power2.easeIn",
-              duration:1.5,
-              delay:1.5,
-              repeat:-1,
-              yoyo:true
-          })
-        gsap.fromTo(img2, {
-          // opacity:0,
-          skewX:".5deg",
-          scale:1
-  
-      },
-          {
-              scale:1.5,
-              skewX:"0deg",
-          opacity:1,
-          ease:"Power2.easeIn",
-              duration:1.5,
-              delay:1.5,
-              repeat:-1,
-              yoyo:true
-          })
-        gsap.fromTo(img3, {
-          // opacity:0,
-          skewX:".5deg",
-          scale:1
-  
-      },
-          {
-          scale:1.2,
-          skewX:"0deg",
-          opacity:1,
-          ease:"Power2.easeIn",
-          duration:1.5,
-          delay:1.5,
-          repeat:-1,
-          yoyo:true
-          })
-        gsap.fromTo(img4, {
-          
-          scale:1,
-          // opacity:0,
-          skewX:".5deg",
+    return () => clearInterval(intervalId);
+  }, [images.length]);
 
-  
-      },
-          {
-              scale:1.1,
-              skewX:"0deg",
-              
-              ease:"Power2.easeIn",
-              opacity:1,
-              duration:1.5,
-              delay:1.5,
-              repeat:-1,
-              yoyo:true
-          })
-          return () => clearInterval(initiateAnimation);
-  },[count])
-  
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIsAnimatingText(false);
+      
+      setTimeout(() => {
+        setCurrentIndexText((prevIndex) => (prevIndex + 1) % images.length);
+        setIsAnimatingText(true);
+      }, 3000); 
+    }, 6000);
+
+    return () => clearInterval(intervalId);
+  }, [images.length]);
+
   return (
     <header className='header-section'>
-      <div className='bg'>
-        <img src={images[currentIndex]} alt='header' />
-      </div>
-      <div className='row'>
-        <img ref={img1Ref} className='img-1' src={images[currentIndex]} alt='header' />
-        <div className='blind'></div>
-        <h2>Microservices</h2>
-        <p>Brand Design</p>
-      </div>
-      <div className='row col-end'>
-        <img ref={img2Ref} className='img-2' src={images[currentIndex]} alt='header' />
-        <div className='blind'></div>
-        <p>Brand Design</p>
-        <h2>Dart</h2>
-      </div>
-      <div className='row'>
-        <img ref={img3Ref} className='img-3' src={images[currentIndex]} alt='header' />
-        <div className='blind'></div>
-        <h2>Mobile Developer</h2>
-        <p>Brand Design</p>
-      </div>
-      <div className='row col-end'>
-        <img ref={img4Ref} className='img-4' src={images[currentIndex]} alt='header' />
-        <div className='blind'></div>
-        <p>Brand Design</p>
-        <h2>Creative Developer</h2>
-      </div>
+      {data.map((datum,index)=>{
+        return(
+         <div key={index} className='row '>
+         {datum.showImage&&<img
+           className={`img-${index+1} ${isAnimating ? 'inactive' : 'active'}`}
+           src={data[currentIndex].image}
+           alt='header'
+         />}
+         <div className={`blind ${!isAnimating ? 'active' : ''}`}></div>
+         {datum.showTitle&&<h2 className={`hero-text-large ${isAnimatingText ? 'active' : ''}`}>{data[currentIndexText].title}</h2>}
+         {datum.showDescription&&<p dangerouslySetInnerHTML={{__html:data[currentIndexText].description}} style={{"padding":"20px"}} className={`hero-text-small ${isAnimatingText ? 'active' : ''}`}></p>}
+       </div>
+      )})}
     </header>
   );
 };

@@ -1,0 +1,80 @@
+:root {
+    --bar-bg: #bfd0e0 !important;
+  }
+  
+  *{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .menu-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+  
+  .menu-icon__checkbox {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .menu-icon div {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 12px;
+    left: 0;
+    bottom: 0;
+    width: 22px;
+    height: 12px;
+  }
+  
+  .menu-icon span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bar-bg, #000);
+    border-radius: 1px;
+    transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+  }
+  
+  .menu-icon span:first-of-type {
+    top: 0;
+  }
+  
+  .menu-icon span:last-of-type {
+    bottom: 0;
+  }
+  
+  .menu-icon.active span:first-of-type {
+    transform: rotate(45deg);
+    top: 5px;
+  }
+  
+  .menu-icon.active span:last-of-type {
+    transform: rotate(-45deg);
+    bottom: 5px;
+  }
+  
+  .menu-icon:hover span:first-of-type,
+  .menu-icon:hover span:last-of-type {
+    width: 22px;
+  }
+  
+  @media (min-width: 1024px) {
+    .menu-icon:hover span:first-of-type {
+      width: 26px;
+    }
+  
+    .menu-icon:hover span:last-of-type {
+      width: 12px;
+    }
+  }
+  

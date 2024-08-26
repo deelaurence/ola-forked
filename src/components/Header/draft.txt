@@ -1,0 +1,63 @@
+ <header className='header-section'>
+      <div className='row'>
+        {/* <img
+          className={`img-1 ${isAnimating ? 'inactive' : 'active'}`}
+          src={images[currentIndex]}
+          alt='header'
+        /> */}
+        <div className={`blind ${!isAnimating ? 'active' : ''}`}></div>
+        {/* <h2>{titles[currentIndex]}</h2> */}
+        {/* <p className={`hero-text-small ${isAnimatingText ? 'active' : ''}`}>{descriptions[currentIndexText]}</p> */}
+      </div>
+      <div className='row '>
+        <img
+          className={`img-2 ${isAnimating ? 'inactive' : 'active'}`}
+          src={images[currentIndex]}
+          alt='header'
+        />
+        <div className={`blind ${!isAnimating ? 'active' : ''}`}></div>
+        <h2 className={`hero-text-large ${isAnimatingText ? 'active' : ''}`}>{titles[currentIndexText]}</h2>
+        {/* <p className={`hero-text-small ${isAnimatingText ? 'active' : ''}`}>{descriptions[currentIndexText]}</p> */}
+      </div>
+      <div className='row'>
+        <img
+          className={`img-3 ${isAnimating ? 'inactive' : 'active'}`}
+          src={images[currentIndex]}
+          alt='header'
+        />
+        <div className={`blind ${!isAnimating ? 'active' : ''}`}></div>
+        {/* <h2 className={`hero-text-large ${isAnimating ? 'active' : ''}`}>{titles[0]}</h2> */}
+        <p className={`hero-text-small ${isAnimatingText ? 'active' : ''}`}>{descriptions[currentIndexText]}</p>
+      </div>
+      <div className='row'>
+        {/* <img
+          className={`img-4 ${isAnimating ? 'inactive' : 'active'}`}
+          src={images[currentIndex]}
+          alt='header'
+        /> */}
+        <div className={`blind ${!isAnimating ? 'active' : ''}`}></div>
+        {/* <h2>{titles[currentIndex]}</h2>
+        <p>{descriptions[currentIndex]}</p> */}
+      </div>
+    </header>
+
+
+
+
+1//Skyskillhub/FU=====
+2//Onicon/FE====
+7//Mt. OM/FU====
+3//Flo/FE====
+4/Austin2===
+5/Austin1===
+6//Bloggy/FU===
+8//Infifteen/FU===
+9//Resume Vantage/BE===
+10//nanovestapi/BE===
+11/Optimize/FS===
+
+
+
+
+
+
