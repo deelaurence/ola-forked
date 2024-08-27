@@ -34,7 +34,7 @@ const Header = () => {
       showImage:true
     },
     {
-      title:"APIs.",
+      title:"&",
       description:"I have engineered and deployed over 30 APIs and business logics with <em>Python</em> and <em>nodeJS</em>",
       image:headerImg2,
       showTitle:false,

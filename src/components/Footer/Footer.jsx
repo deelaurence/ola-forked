@@ -1,5 +1,6 @@
 import React from 'react';
 import { navLinks } from '../../data';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer>
@@ -13,7 +14,7 @@ const Footer = () => {
             <a href={navLinks.github}>
              <li>GITHUB</li>
             </a>
-            <a href={navLinks.github}>
+            <a href={navLinks.linkedIn}>
               <li><em>LinkedIn</em></li>
             </a>
           </ul>
@@ -28,6 +29,9 @@ const Footer = () => {
               <a href={navLinks.resume}>
                 <li>VIEW MY RESUME</li>
               </a>
+              <Link to="/about">
+                <li>ABOUT ME</li>
+              </Link>
             </ul>
            
           </div>

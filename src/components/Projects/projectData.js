@@ -51,10 +51,10 @@ export let allProjects = [
         title:"SkySkillHub",
         date:2023,
         about:"A learning Management system",
-        role:"Fullstack(Backend Heavy)",
+        role:"Fullstack[Backend Heavy]",
         paragraphs:[
             "I worked as a full-stack engineer, focusing heavily on the backend, at SkySkillHub, an innovative learning management system (LMS). The platform allowed users to register for courses and make payments to learn various tech skills. My role involved ensuring seamless user registration, secure payment handling, and the overall scalability of the system.",
-            "The stack I worked with included a mix of modern web technologies. On the backend, I used Node.js for the api, python for the server-side logic, Redis for the in-memory caching although for cache files where I/O latency is better than the latency gotten from connecting to redis-cloud, I utilized disk caching and for the database, MongoDB was used. For the frontend, we built the application using Next.js, ensuring a fast and SEO-friendly user experience. Payment integrations were a crucial part of the project, and we successfully integrated Paystack and Stripe to handle payments from users across different regions.",
+            "On the backend, I used Node.js for the api, python for the server-side logic, Redis for the in-memory caching although for cache files where I/O latency is better than the latency gotten from connecting to redis-cloud, I utilized disk caching and for the database, MongoDB was used. For the frontend, we built the application using Next.js, ensuring a fast and SEO-friendly user experience. Payment integrations were a crucial part of the project, and we successfully integrated Paystack and Stripe to handle payments from users across different regions.",
             "My development process was highly structured, following agile methodologies to ensure efficient and timely delivery. I maintained detailed API documentation using SwaggerDocs, which facilitated collaboration between the front-end and back-end teams. This documentation also helped in streamlining the process of onboarding new developers and ensuring that the API endpoints were well-documented and easy to understand."
         ],
         tags:['NodeJS','Backend','MongoDB','Python','Paystack','SwaggerDocs'],  
@@ -64,7 +64,7 @@ export let allProjects = [
         images: [onicon1, onicon2, onicon3,onicon4],
         title: "Onicon",
         date:2023,
-        about:"A Nigerian engineering firm portfolio",
+        about:"A Nigerian engineering firm",
         role: "Frontend Engineer",
         paragraphs: [
             "I worked as a frontend engineer on Onicon, a website designed for a construction firm. The project focused on creating a visually appealing and user-friendly interface to showcase the firm's services and projects. My role involved implementing responsive designs and ensuring a seamless user experience across various devices.",
@@ -77,8 +77,8 @@ export let allProjects = [
     {
         images: [uacc1, uacc2, uacc3, uacc4],
         title: "UACC",
-        date: 2023,
-        about: "A church website for managing articles, messages, and payments.",
+        date: 2022,
+        about: "A church website",
         role: "Fullstack Engineer",
         paragraphs: [
             "I worked as a fullstack engineer on UACC, a website designed for a church organization. The project involved building a platform where articles and messages are summarized and easily accessible to the congregation. My role encompassed both frontend and backend development, ensuring a seamless and efficient user experience across the site.",
@@ -86,12 +86,12 @@ export let allProjects = [
             "One of the key features of the UACC site is the integration with Paystack for processing offerings and tithes. I set up the payment gateway to ensure smooth and secure transactions, allowing users to make donations online with ease. Throughout the development, I focused on creating a robust, scalable solution that meets the church's needs while providing an intuitive experience for both the congregation and the administrators."
         ],
         tags: ['React.js', 'Express.js', 'MongoDB', 'Paystack', 'Fullstack Development'],
-        link: "https://uaccwebsite.com"
+        link: "https://mt-of-mercy.netlify.app"
     },{
         images: [flo,flo1, flo2, flo3, flo4],
         title: "FLO",
-        date: 2023,
-        about: "A portfolio website for a product designer.",
+        date: 2021,
+        about: "A designer's portfolio",
         role: "Frontend Developer",
         paragraphs: [
             "I worked as a frontend developer on FLO, a portfolio website designed to showcase the work of a product designer. The project aimed to create a visually stunning and highly functional platform where the designer's work could be easily accessed by potential clients.",
@@ -99,13 +99,13 @@ export let allProjects = [
             "Throughout the development process, I focused on implementing clean and efficient code, ensuring that the website was not only beautiful but also performant across all devices and browsers."
         ],
         tags: ['React.js', 'Frontend Development', 'Responsive Design', 'UI/UX'],
-        link: "https://flodesigner.com"
+        link: "https://newflo.netlify.app"
     },
     {
         images: [nhutch1, nhutch2, nhutch3],
-        title: "Nhutch",
+        title: "Nhutchi",
         date: 2023,
-        about: "A Mozambique fintech company for loan and payment processing.",
+        about: "A Mozambique fintech company.",
         role: "Fullstack Developer",
         paragraphs: [
             "I worked as a fullstack developer on Nhutch, a fintech platform based in Mozambique. The project involved developing a robust system for processing loans and payments, ensuring security, efficiency, and scalability.",
@@ -113,13 +113,13 @@ export let allProjects = [
             "The platform required integration with various payment tools, including mobile money services and traditional banking systems, to facilitate seamless transactions for users. My role also involved implementing security measures to protect user data and financial information, making the platform both user-friendly and secure."
         ],
         tags: ['React.js', 'Django Rest Framework', 'Fullstack Development', 'Payment Processing', 'Fintech'],
-        link: "https://nhutchfinance.com"
+        link: "https://nhutchi.co.mz/"
     },
     {
         images: [kma1, kma2, kma3],
         title: "KMA",
         date: 2023,
-        about: "A betting analysis platform delivering predictions to premium subscribers.",
+        about: "A betting analysis platform.",
         role: "Backend Engineer",
         paragraphs: [
             "I worked as a backend engineer on KMA, a betting analysis platform designed to provide premium subscribers with accurate betting predictions. The project required a system to automate the delivery of predictions and insights to users' emails.",
@@ -127,13 +127,13 @@ export let allProjects = [
             "In addition to email delivery, I also implemented a Telegram bot to provide subscribers with real-time notifications. This multi-channel approach ensured that users received timely updates through their preferred method of communication."
         ],
         tags: ['Django Rest Framework', 'Celery', 'Celery Beat', 'Backend Development', 'Telegram Bot'],
-        link: "https://kma-betting.com"
+        link: "https://kmanalysis.com/"
     },
     {
         images: [bikes1, bikes3, bikes],
         title: "Bikes of Lagos",
         date: 2023,
-        about: "An ecommerce platform for buying and selling bikes in Lagos.",
+        about: "An ecommerce platform",
         role: "Fullstack Engineer",
         paragraphs: [
             "I worked as a fullstack engineer on Bikes of Lagos, an ecommerce platform dedicated to the sale and purchase of bikes in Lagos, Nigeria. The project aimed to provide a seamless and user-friendly online shopping experience for both buyers and sellers.",
@@ -141,13 +141,13 @@ export let allProjects = [
             "I collaborated closely with Austin from Astrosoft to ensure that the platform met the business requirements and provided a smooth shopping experience. My role involved integrating payment gateways, managing database interactions, and ensuring that the platform was secure and scalable."
         ],
         tags: ['Next.js', 'React.js', 'Fullstack Development', 'Ecommerce', 'Collaboration'],
-        link: "https://bikesoflagos.com"
+        link: "https://electric-bikes-theta.vercel.app/"
     },
     {
         images: [skystudio1, skystudio2, skystudio3],
         title: "Skystudio",
         date: 2023,
-        about: "A web platform for photo and video editing, where users can create designs or use pre-made templates.",
+        about: "Photo and Video editing",
         role: "Fullstack Engineer",
         paragraphs: [
             "I worked as a fullstack engineer on Skystudio, a platform designed for photo and video editing directly in the browser. The project allows both designers and non-designers to create or use existing designs for their personal or professional needs.",
@@ -155,13 +155,13 @@ export let allProjects = [
             "Skystudio's complex architecture required careful planning and integration of various technologies to ensure a seamless and responsive user experience. My role involved developing and optimizing both frontend and backend components to handle the diverse needs of users."
         ],
         tags: ['React.js', 'Next.js', 'Vue.js', 'Fabric.js', 'Node.js', 'TypeScript', 'Celery', 'Fullstack Development'],
-        link: "https://skystudio.com"
+        link: "https://graphic-murex.vercel.app"
     },
     {
         images: [binarybloggy1, binarybloggy2, binarybloggy3],
         title: "BinaryBloggy",
         date: 2023,
-        about: "A personal blog focused on programming and software design.",
+        about: "My blog",
         role: "Fullstack Developer",
         paragraphs: [
             "BinaryBloggy is my personal blog where I write about various topics related to programming and software design. The blog is a platform to share insights, tutorials, and experiences with the broader developer community.",
@@ -169,13 +169,13 @@ export let allProjects = [
             "In developing BinaryBloggy, I focused on creating a clean and user-friendly interface, ensuring that readers could easily navigate through articles and access the content they are interested in."
         ],
         tags: ['Django', 'PostgreSQL', 'Fullstack Development', 'Blogging', 'Software Design'],
-        link: "https://binarybloggy.com"
+        link: "https://binary-bloggy.onrender.com"
     },
     {
         images: [infifteen1, infifteen2, infifteen3, infifteen4],
         title: "InFifteen",
-        date: 2023,
-        about: "A community-driven quiz app for programmers.",
+        date: 2024,
+        about: "A Quiz app for programmers.",
         role: "Fullstack Developer",
         paragraphs: [
             "InFifteen is a quiz app designed to challenge programmers with multiple-choice questions contributed by the community. The app covers a wide range of topics, including React, JavaScript, Spring Boot, SQL, Django, and Laravel.",
@@ -183,35 +183,35 @@ export let allProjects = [
             "InFifteen currently hosts over 100 questions, making it a valuable resource for developers looking to test and improve their knowledge across various programming languages and frameworks."
         ],
         tags: ['Django', 'PostgreSQL', 'Python Scripting', 'Fullstack Development', 'Quiz App'],
-        link: "https://infifteen.com"
+        link: "https://infifteen.onrender.com"
     },
     {
         images: [resumevantage1, resumevantage2, resumevantage1],
         title: "Resume Vantage",
-        date: 2023,
-        about: "An AI-driven platform for creating professional resumes.",
+        date: "in Process*",
+        about: "Ai powered resume builder",
         role: "Backend Engineer",
         paragraphs: [
             "Resume Vantage is a platform that helps users create professional resumes with the assistance of AI. The project is designed to simplify the resume creation process, providing users with tailored suggestions and formatting options.",
             "As a backend engineer, I am responsible for developing and maintaining the server-side logic using Node.js and TypeScript. The backend handles user data, integrates with AI models, and ensures a smooth and responsive experience for users.",
             "The project is still ongoing, with a focus on implementing new features and optimizing the platform's performance to meet the needs of job seekers."
         ],
-        tags: ['Node.js', 'TypeScript', 'Backend Development', 'AI Integration', 'Resume Creation'],
-        link: "https://resumevantage.com"
+        tags: ['Node.js', 'TypeScript', 'openai', 'Backend Development', 'AI Integration', 'Resume Creation'],
+        link: "https://resume-vantage.vercel.app/"
     },
     {
         images: [optimize1, optimize2,optimize1],
         title: "Optimize",
-        date: 2023,
-        about: "A platform for converting high-quality images to WebP format.",
+        date: 2022,
+        about: "Optimize heavy images to lossless webp.",
         role: "Fullstack Developer",
         paragraphs: [
-            "Optimize is a platform designed to convert high-quality JPEG and PNG images to WebP format, optimizing them for web use. The platform ensures that images are processed efficiently and maintains their quality while reducing file sizes.",
-            "I used BullMQ and Redis to handle background processing tasks, allowing for scalable and reliable image conversion. The backend was developed with Node.js, and the frontend was built to provide users with an intuitive interface for uploading and managing their images.",
+            "Okay! we were having issues at work making sure the load time of our sites are improved and the real issue comes from doing this without editing-down the quality of the image, so I came up with a fix by building [Optimize] to convert high-quality JPEG and PNG images to WebP format with up to 98% reduction in size without sacrificing quality, optimizing them for web use.",
+            "I used BullMQ and Redis to handle background processing tasks, allowing for scalable and reliable image conversion. The backend was developed with Node.js, and I incorporated ejs* template engine to serve the frontend.",
             "Optimize's architecture focuses on speed and efficiency, making it a valuable tool for developers and designers looking to optimize their web content."
         ],
         tags: ['Node.js', 'BullMQ', 'Redis', 'Fullstack Development', 'Image Conversion', 'WebP'],
-        link: "https://optimize.com"
+        link: "https://optimize-webp-v2.onrender.com/"
     }
     
     

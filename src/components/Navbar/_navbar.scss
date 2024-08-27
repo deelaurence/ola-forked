@@ -213,14 +213,26 @@ nav {
     }
   }
   
+  @keyframes growUp {
+    from {
+        transform: translateY(70px) rotate(6deg);
+        opacity: 0;
+        
+    }
+    to {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+    }
+  }
+  
   /* Apply the animation to the navbar text */
   .nav-text {
-    animation-duration: 2s;
+    animation-duration: 1.3s;
     animation-fill-mode: forwards;
     opacity: 0; /* Initial state is hidden */
   }
   .nav-text1 {
-    animation-duration: 3s;
+    animation-duration: 1.7s;
     animation-fill-mode: forwards;
     opacity: 0; /* Initial state is hidden */
   }
@@ -248,7 +260,10 @@ nav {
     // animation-delay: .5s;
 }
 
-
+.nav-text,.nav-text1,.nav-text2{
+    animation-name:growUp !important;
+    animation-timing-function:ease-in-out;
+}
 
 
 /* Hide the text when the navbar is closing */

@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className='desktop-links'>
           <ul>
             <a>MY BLOG </a>
-            <a>ABOUT ME</a>
+            <a>ME</a>
             <a>RÉSUMÉ</a>
           </ul>
         </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
             <a href={navLinks.resume} className={animate?`nav-text1`:""}>Résumé</a>
           </li>
           <li>
-            <Link to={"/about"} className={animate?`nav-text2`:""}>About me</Link>
+            <Link to={"/about"} className={animate?`nav-text2`:""}>Me</Link>
           </li>
         </ul>
         <ul className='socials'>

@@ -86,17 +86,19 @@ const MobileProject = ({ project, projectIndex, activeIndex, setActiveIndex }) =
 
   return (
     <article className='mob-project' key={projectIndex}>
-      <h2
+      <div
         className='title'
         onClick={() => {
           setActiveIndex(projectIndex === activeIndex ? null : projectIndex);
         }}
       >
-        {title}{' '}
+        <div>
+          {title} <span className='span-date' >&mdash; {date}</span>  
+        </div>  
         <span className={projectIndex === activeIndex ? `active` : ''}>
           <BsArrowUp />
         </span>
-      </h2>
+      </div>
       <div className={`info  ${projectIndex === activeIndex ? `active` : ''}`}>
         <div className='row'>
           <h4>{about}</h4>

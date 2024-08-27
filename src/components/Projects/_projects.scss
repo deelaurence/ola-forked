@@ -35,7 +35,7 @@
                 font-weight: 400;
                 position: relative;
                 margin-bottom: 10px;
-                text-transform: uppercase;
+                // text-transform: uppercase;
                 @include flex(center, space-between, row);
 
                 span {
@@ -45,6 +45,12 @@
                     &.active {
                         transform: rotate(360deg);
                     }
+                }
+
+                .span-date{
+                    transform: rotate(0);
+                    opacity: .7;
+                    font-size: .8rem;
                 }
             }
 
@@ -61,6 +67,7 @@
 
                 h4 {
                     font-weight: 500;
+                    max-width: 85%;
                 }
 
                 p {
