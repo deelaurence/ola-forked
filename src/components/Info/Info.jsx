@@ -88,7 +88,7 @@ const Info = () => {
             {
               workData.map((work,index)=>{
                 return(
-                  <p key={index} className={currentWork==index?`active-project`:""}>
+                  <p key={index} className={  currentWork==index?`active-project`:"inactive-project"}>
                     {work}
                   </p>
                 )
