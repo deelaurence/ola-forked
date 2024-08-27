@@ -1,114 +1,70 @@
-.p-cont{
-    // display: flex;
-    // flex-wrap: wrap;
-    // gap: 4px;
-    // border: 3px solid red;
+.detail-section{
+    position: relative;
+    z-index: 222;
+    background: #1e1915c7;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom:100px;
+    gap: 40px;
 }
 
-.p-cont>p{
-    display: inline-block;
-    border: 1px solid rgba(255, 255, 0, 0.153);
-    height: fit-content;
-    overflow: visible;
+.detail-section>img{
+
+    // border: 20px solid $primaryColor;
+}
+
+.detail-title{
+    font-size: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.tags-details{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    opacity: .7;
+}
+
+.role-details{
     font-weight: 600;
-    width: auto;
-    // padding: 7px;
 }
 
-
-.about-section {
-    padding: 70px 0;
-
-    .top {
-        padding: 80px 14px;
-        position: relative;
-        video{
-            max-width: 92vw;
-        }
-        h1 {
-            font-size: 15vw;
-            width: 100%;
-        }
-    }
-
-    .bottom {
-        @include flex(flex-start, space-between, column);
-
-        article {
-            width: 100%;
-            border-top: 1px solid $secondaryColor;
-            padding: 1rem 14px;
-
-            p {
-                position: relative;
-                font-size: 1.25rem;
-                z-index: 4;
-                line-height: 1.5;
-            }
-
-            &:last-child {
-                border-bottom: 1px solid $secondaryColor;
-                padding-bottom: 60px;
-            }
-        }
-    }
+.about-details{
+    overflow: visible;
+    font-size: 2rem;
 }
 
-@include for-phones {
-    .about-section {
-        .top {
-            padding: 80px 24px;
-        }
-
-        .bottom {
-            article {
-                padding: 1rem 24px;
-            }
-        }
-    }
+.links-cont{
+    margin-top: 40px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
 }
 
-@include for-tablet-potrait-up {}
-
-@include for-tablet-landscape-up {}
-
-@include for-desktop-up {
-    .about-section {
-        padding-top: 0;
-
-        .top {
-            padding: 80px 24px;
-            @include verticalLines;
-
-            h1 {
-                font-size: 5vw;
-                width: 60%;
-                padding: 3rem 0
-            }
-        }
-
-        .bottom {
-            @include flex(flex-start, space-between, row);
-            border-top: 1px solid $secondaryColor;
-            padding: 0 24px;
-            min-height: 300px;
-
-            article {
-                width: 50%;
-                padding: 1rem;
-                border: none;
-
-                p {
-                    font-size: 1.625rem;
-                }
-
-                &:last-child {
-                    border: none;
-                    padding-bottom: 1rem;
-                }
-            }
-        }
-    }
+.details-link{
+    text-decoration: underline;
+    height: 50px;
+    display: flex;
+    font-size: 14px;
+    gap: 5px;
+    font-weight: 500;
+    align-items: center;
+    align-self: center;
+    width: fit-content;
 }
 
-@include for-big-desktop-up {}
+.details-link>svg{
+    font-size: 20px;
+}
+
+.paragraph-details{
+    margin:40px 0px ;
+}
+
+.disable{
+    opacity:0.5
+}

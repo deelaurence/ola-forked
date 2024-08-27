@@ -44,7 +44,7 @@ const Navbar = () => {
           {!showNavbar?<HiMenuAlt3/>:<IoClose/>}
         </div>
       </div>
-      <div className={`mob-nav-links ${showNavbar ? `show-nav` : null}`}>
+      <div onClick={()=>{setShowNavbar(false)}} className={`mob-nav-links ${showNavbar ? `show-nav` : null}`}>
         <ul>
           <li>
             <a href={navLinks.blog} className={animate?`nav-text`:""}>My blog</a>

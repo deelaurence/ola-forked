@@ -3,20 +3,26 @@ import headerImg from '../../assets/myreel.gif';
 import headerImg2 from '../../assets/projects.gif';
 import headerImg3 from '../../assets/slide2.webp';
 import headerImg4 from '../../assets/slide3.webp';
+import { allProjects } from '../Projects/projectData';
+
 
 const Header = () => {
   const images = [headerImg2, headerImg2, headerImg2, headerImg2];
-  
-  // Arrays for dynamic text data
+  let allTitles = allProjects.map((item)=>{
+    return(item.title)
+  })
+  allTitles=['*','*','*']
+  // Arrays for dynamic text d'ata
   const titles = ["Hi", "Hola", "Hi","Hallo"];
   const descriptions = ["I use Python", "I use NodeJS", "I use ReactJS", "I use Typescript"];
   const data=[
     {
       title:"Hey.",
       description:"My name is Odunayo <em>but wait...</em>",
-      image:headerImg,
+      image:headerImg2,
       showTitle:false,
       showDescription:false,
+      alternateText:allTitles,
       showImage:false
     },
     {
@@ -41,7 +47,8 @@ const Header = () => {
       image:headerImg2,
       showTitle:false,
       showDescription:false,
-      showImage:false
+      showImage:false,
+      alternateText:allTitles
     },
   ]
 
@@ -99,6 +106,20 @@ const Header = () => {
          />}
          <div className={`blind ${!isAnimating ? 'active' : ''}`}></div>
          {datum.showTitle&&<h2 className={`hero-text-large ${isAnimatingText ? 'active' : ''}`}>{data[currentIndexText].title}</h2>}
+          <div className='alternate-text' >
+          {datum.alternateText?datum.alternateText.map((d,i)=>{
+            return(
+                <p key={i}>{d}</p>
+            )
+          }):null}
+         </div>
+          {/* <div className='alternate-text' >
+          {datum.alternateText?datum.alternateText.map((d,i)=>{
+            return(
+                <p key={i}>{d}</p>
+            )
+          }):null}
+         </div> */}
          {datum.showDescription&&<p dangerouslySetInnerHTML={{__html:data[currentIndexText].description}} style={{"padding":"20px"}} className={`hero-text-small ${isAnimatingText ? 'active' : ''}`}></p>}
        </div>
       )})}

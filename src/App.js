@@ -1,4 +1,3 @@
-import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Info from './components/Info/Info';
@@ -9,7 +8,7 @@ import Shapes from './components/Shapes/Shapes';
 import Skills from './components/Skills/Skills';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import { Details } from './components/Projects/projectDetails';
-
+import { About } from './components/About/About';
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -34,6 +33,7 @@ function App() {
         <ScrollToTop />
         <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
         <Route path='/project/:name' element={<Details  />}/>
         </Routes>
         <Footer />
