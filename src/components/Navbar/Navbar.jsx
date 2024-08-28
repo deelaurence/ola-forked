@@ -28,13 +28,15 @@ const Navbar = () => {
       }`}
     >
       <div className='container'>
-        <Link to={'/'} className='logo'>Odúnayò</Link>
+        <Link onClick={()=>{setShowNavbar(false)}} to={'/'} className='logo'>Odúnayò</Link>
         
         <div className='desktop-links'>
           <ul>
-            <a>MY BLOG </a>
-            <a>ME</a>
-            <a>RÉSUMÉ</a>
+            <a href={navLinks.blog}>MY BLOG </a>
+            <Link to="/about">
+              <a>ME</a>
+            </Link>
+            <a href={navLinks.resume}>RÉSUMÉ</a>
           </ul>
         </div>
         <div className='hambuger' onClick={() =>{ 

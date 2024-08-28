@@ -1,19 +1,18 @@
-import skySkillHub from '../../assets/skyskill5.webp'
-import skySkillHub1 from '../../assets/skyskill1.webp'
-import skySkillHub2 from '../../assets/skyskill2.webp'
-import skySkillHub3 from '../../assets/skyskill3.webp'
-import onicon1 from '../../assets/onicon1.webp'
-import onicon2 from '../../assets/onicon2.webp'
-import onicon3 from '../../assets/onicon3.webp'
-import onicon4 from '../../assets/onicon4.webp'
-import uacc1 from '../../assets/mom1.webp'
-import uacc2 from '../../assets/mom2.webp'
-import uacc3 from '../../assets/mom3.webp'
-import uacc4 from '../../assets/mom4.webp'
+import skySkillHub from '../../assets/skyskilla.webp'
+import skySkillHub1 from '../../assets/skyskillb.webp'
+import skySkillHub2 from '../../assets/skyskillc.webp'
+import skySkillHub3 from '../../assets/skyskilla.webp'
+import onicon1 from '../../assets/onicona.webp'
+import onicon2 from '../../assets/oniconb.webp'
+import onicon3 from '../../assets/oniconc.webp'
+import onicon4 from '../../assets/onicona.webp'
+import uacc1 from '../../assets/moma.webp'
+import uacc2 from '../../assets/momb.webp'
+import uacc3 from '../../assets/momc.webp'
+import uacc4 from '../../assets/momd.webp'
 import flo from '../../assets/flo.gif'
 import flo1 from '../../assets/flo3.webp'
 import flo2 from '../../assets/flo4.webp'
-import flo3 from '../../assets/flo5.webp'
 import flo4 from '../../assets/flo6.webp'
 import nhutch1 from '../../assets/ntuchi1.webp'
 import nhutch2 from '../../assets/ntuchi2.webp'
@@ -25,9 +24,9 @@ import kma3 from '../../assets/kma.webp'
 import bikes from '../../assets/bikes1.webp'
 import bikes1 from '../../assets/bikes2.webp'
 import bikes3 from '../../assets/bikes4.webp'
-import skystudio1 from '../../assets/skystudio1.webp'
-import skystudio2 from '../../assets/skystudio2.webp'
-import skystudio3 from '../../assets/skystudio3.webp'
+import skystudio1 from '../../assets/skystudioa.webp'
+import skystudio2 from '../../assets/skystudiob.webp'
+import skystudio3 from '../../assets/skystudioc.webp'
 import binarybloggy1 from '../../assets/bloggy1.webp'
 import binarybloggy2 from '../../assets/bloggy2.webp'
 import binarybloggy3 from '../../assets/bloggy3.webp'
@@ -88,7 +87,7 @@ export let allProjects = [
         tags: ['React.js', 'Express.js', 'MongoDB', 'Paystack', 'Fullstack Development'],
         link: "https://mt-of-mercy.netlify.app"
     },{
-        images: [flo,flo1, flo2, flo3, flo4],
+        images: [flo,flo1, flo4,  flo2],
         title: "FLO",
         date: 2021,
         about: "A designer's portfolio",
@@ -172,7 +171,7 @@ export let allProjects = [
         link: "https://binary-bloggy.onrender.com"
     },
     {
-        images: [infifteen1, infifteen2, infifteen3, infifteen4],
+        images: [infifteen2, infifteen3, infifteen4],
         title: "InFifteen",
         date: 2024,
         about: "A Quiz app for programmers.",

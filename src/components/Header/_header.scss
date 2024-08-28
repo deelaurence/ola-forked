@@ -45,7 +45,7 @@
             top: -325%;
             
         }
-        .blind{
+        .blind-1,.blind-2,.blind-3{
             height: 100%;
             // border: 2px solid red;
             width: 100%;
@@ -87,12 +87,25 @@
     h2{
         font-size: 9vw !important;
     }
+    .header-img.active{
+        transform: scale(1.2);
+        opacity: 1;
+        width: 50% !important;
+    }
+    
+    .header-img.inactive {
+        width: 50% !important; 
+        transform: scale(1.1);
+    }
+    
 }
 
 @include for-desktop-up {
     .header-section {
         overflow: hidden;
-        display: none;
+        // transform: rotate(90deg);
+        // z-index: 0;
+        // display: none;
 
 
         .bg {
@@ -130,8 +143,8 @@
             
 
             h2 {
-                display: none;
-                font-size: 2vw !important;
+                // display: none;
+                font-size: 5rem !important;
             }
 
             p {
@@ -167,17 +180,47 @@
     transition: transform 2s cubic-bezier(0.55, 0.085, 0.68, 0.53), opacity 2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   }
   
-  .blind {
+  .blind-1 {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: #000;
     transform: translateY(0%);
-    transition: transform 2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: transform 1s ease-out;
     z-index: 1;
 }
 
-.blind.active {
+.blind-1.active {
+    transform: translateY(100%);
+}
+  
+.blind-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transform: translateY(0%);
+    transition: transform .8s ease-in-out;
+    transition-delay: .3s;
+    z-index: 1;
+}
+
+.blind-2.active {
+    transform: translateY(100%);
+}
+  
+.blind-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transform: translateY(0%);
+    transition-delay: .5s;
+    transition: transform 1s ease-in-out;
+    z-index: 1;
+}
+
+.blind-3.active {
     transform: translateY(100%);
 }
 
@@ -208,16 +251,31 @@
     opacity: 1;
     // transition: 2s ease-out;
 }
-  
-  img.active{
+
+
+
+img.active{
     transform: scale(1.2);
     opacity: 1;
 }
-  
-  img.inactive {
-    opacity: 0;
-    transform: scale(2);
+
+img.inactive {
+    transform: scale(1.3);
 }
+
+.img-2{
+    transition-duration: 1.2s !important;
+    transition-timing-function: ease-out !important;
+}
+.img-3{
+    transition-timing-function: ease-out !important;
+    transition-duration: 1.4s !important;
+}
+.img-4{
+    transition-timing-function: ease-out !important;
+    transition-duration: 1s !important;
+}
+
 
 .alternate-text{
     display: flex;

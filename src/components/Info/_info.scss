@@ -40,6 +40,9 @@
         padding: 10rem 17px;
         @include verticalLines;
     }
+    .h1,.h2{
+        font-size: 4rem !important;
+    }
 }
 
 @include for-big-desktop-up {}
@@ -84,3 +87,4 @@
     // text-decoration: underline;
     opacity: 0.7;
 }
+

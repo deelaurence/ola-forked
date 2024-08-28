@@ -11,10 +11,18 @@ const Header = () => {
   let allTitles = allProjects.map((item)=>{
     return(item.title)
   })
+
+
+  const [isDesktop,setIsDesktop]=useState(window.innerWidth>768);
+  useEffect(()=>{
+    const handleResize=()=>setIsDesktop(window.innerWidth>768)
+    window.addEventListener('resize',handleResize)
+    return ()=> window.removeEventListener('resize',handleResize);
+  })
+
+
   allTitles=['*','*','*']
   // Arrays for dynamic text d'ata
-  const titles = ["Hi", "Hola", "Hi","Hallo"];
-  const descriptions = ["I use Python", "I use NodeJS", "I use ReactJS", "I use Typescript"];
   const data=[
     {
       title:"Hey.",
@@ -23,7 +31,7 @@ const Header = () => {
       showTitle:false,
       showDescription:false,
       alternateText:allTitles,
-      showImage:false
+      showImage:false,
     },
     {
       title:"Stack.",
@@ -47,7 +55,7 @@ const Header = () => {
       image:headerImg2,
       showTitle:false,
       showDescription:false,
-      showImage:false,
+      showImage:true,
       alternateText:allTitles
     },
   ]
@@ -100,11 +108,11 @@ const Header = () => {
         return(
          <div key={index} className='row '>
          {datum.showImage&&<img
-           className={`img-${index+1} ${isAnimating ? 'inactive' : 'active'}`}
+           className={`img-${index+1} header-img ${isAnimating ? 'inactive' : 'active'}`}
            src={data[currentIndex].image}
            alt='header'
          />}
-         <div className={`blind ${!isAnimating ? 'active' : ''}`}></div>
+         <div className={`blind-${index} ${!isAnimating ? 'active' : ''}`}></div>
          {datum.showTitle&&<h2 className={`hero-text-large ${isAnimatingText ? 'active' : ''}`}>{data[currentIndexText].title}</h2>}
           <div className='alternate-text' >
           {datum.alternateText?datum.alternateText.map((d,i)=>{

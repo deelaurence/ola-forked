@@ -88,19 +88,18 @@
             display: none;
         }
 
-        .mob-project,
-        .desktop-project {
+        .mob-project{
             .slides {
                 height: 300px;
                 position: relative;
+                overflow: visible;
                 margin-top: 60px;
                 background: $primaryColor;
                 padding-bottom: 40px;
-                border-top: 20px solid $primaryColor;
-                border-bottom: 50px solid $primaryColor;
-                border-left: 50px solid $primaryColor;
-                border-right: 50px solid $primaryColor;
-                
+                border-top: 50px solid $primaryColor;
+                border-bottom: 30px solid $primaryColor;
+                border-left: 60px solid $primaryColor;
+                border-right: 60px solid $primaryColor;
                 img {
                     position: absolute;
                     height: auto;
@@ -120,13 +119,13 @@
                 .pagination {
                     position: absolute;
                     right: 20px;
-                    bottom: 40px;
-                    
+                    bottom: 50px;
+                    z-index: 1200 !important;
                     height: 40px;
                     @include flex(center, space-between, row);
 
                     span {
-                        border: 1px solid #777;
+                        border: 1px solid white;
                         width: 10px;
                         height: 10px;
                         border-radius: 50%;
@@ -134,7 +133,58 @@
                         margin: 0 5px;
 
                         &.active {
-                            background: #555;
+                            background: white;
+                        }
+                    }
+                }
+            }
+        }
+        .desktop-project {
+            .slides {
+                height: 400px;
+                position: relative;
+                margin-top: 60px;
+                background: $primaryColor;
+                padding-bottom: 40px;
+                border-top: 50px solid $primaryColor;
+                border-bottom: 50px solid $primaryColor;
+                border-left: 60px solid $primaryColor;
+                border-right: 60px solid $primaryColor;
+                overflow: visible;
+                img {
+                    position: absolute;
+                    height: auto;
+                    top: 0;
+                    left: 0;
+                    filter: grayscale(60%);
+                    transform: rotate(0deg) scale(1);
+                    right: 0;
+                    opacity: 0;
+                    transition: 0.4s ease-in-out opacity;
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+
+                .pagination {
+                    position: absolute;
+                    right: 20px;
+                    bottom: -40px;
+                    z-index: 1200 !important;
+                    height: 40px;
+                    @include flex(center, space-between, row);
+
+                    span {
+                        border: 1px solid white;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        margin: 0 5px;
+
+                        &.active {
+                            background: white;
                         }
                     }
                 }
@@ -186,19 +236,12 @@
                 display: block;
 
                 .brief {
-                    @include grid(3, 650px 320px 250px, 40px);
-                    padding: 1rem;
+                    @include grid(3, 600px 420px 150px, 40px);
                     font-size: 30px;
                     transition: linear all 0.2s;
                     cursor: pointer;
 
-                    &:hover {
-                        // text-decoration: underline;
-                        transform: scale(0.98);
-                        transition: .5s;
-                        // background: $secondaryColor;
-                        // color: $primaryColor;
-                    }
+                    
 
                     .proj-date {
                         @include flex(flex-start, space-between, row);
@@ -219,25 +262,38 @@
                     .proj-name {
                         font-size: 2rem !important;
                         font-weight: 500;
+                        margin-left: 15px;
+                        span{
+                            font-size: 1rem;
+                            opacity: .8;
+                        }
                     }
                     .proj-desc {
-                        font-size: 1rem !important;
+                        font-size: 1.1rem !important;
                         font-weight: 400;
+                        display: flex;
+                        width: fit-content;
+                        color: $secondaryColor;
+                        // font-style: italic;
+                        // border-radius: 40px;
+                        opacity: .8;
+                        text-decoration: underline;
+                        align-items: flex-end;
                     }
 
                 }
 
                 .details {
-                    display: none;
+                    margin: 0 20px;
                     margin-top: 20px;
-                    padding: 1rem;
                     height: 0;
                     overflow: hidden;
                     opacity: 0;
-                    transition: linear all 0.5s;
+                    transition: ease-out all .5s !important;
+                    @include grid(2, 650px, 40px);
 
                     .slides {
-                        height: 340px;
+                        height: 400px;
                     }
 
                     .more-info {
@@ -246,17 +302,14 @@
                     }
 
                     &.active {
-                        @include grid(2, 650px 320px, 40px);
-                        height: 400px;
+                       
+                        height: 500px;
+                        transition: 2s;
                         opacity: 1;
                     }
                 }
 
-                &:last-child {
-                    &:hover {
-                        border-bottom: 2px solid $primaryColor;
-                    }
-                }
+                
             }
         }
     }
@@ -267,15 +320,41 @@
 
 .view-details{
     border: 1px solid $secondaryColor;
-    // padding: 10px 40px;
+    margin-top: 30px;
+    display: block;
+    padding: 3px 30px;
     width: fit-content;
     border-radius: 30px;
 }
-// .slide-cont{
-//     border: 2px solid red;
-//     opacity: .5;
-//     height: 500px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-// }
+
+.view-details-desktop:hover{
+    background-color: $primaryColor;
+}
+
+.desktop-down{
+    // opacity: 0 !important;
+    transition: 2s;
+}
+
+.project-aside{
+    margin-right:60px;
+    h2{
+        font-size: 2rem !important;
+        margin-bottom: 30px;
+        margin-top: 5rem;
+    }
+    h3{
+        font-size: .9rem !important;
+        padding-right:.8rem ;
+    }
+}
+
+
+.view-details-desktop{
+    border: 1px solid $secondaryColor;
+    width: fit-content;
+    margin-top: 30px;
+    display: block;
+    padding: 3px 30px;
+    border-radius: 30px;
+}

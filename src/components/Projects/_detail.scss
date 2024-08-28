@@ -16,7 +16,7 @@
 
 .detail-title{
     font-size: 2rem;
-    padding-top: 4rem;
+    padding-top: 6rem;
     padding-bottom: 2rem;
 }
 
@@ -67,4 +67,10 @@
 
 .disable{
     opacity:0.5
+}
+
+@include for-tablet-potrait-up {
+    .detail-section{
+        padding: 0 20vw;
+    }
 }

@@ -15,6 +15,10 @@ const Projects = () => {
   
   const h1Ref=useRef()
   const h1 = h1Ref.current
+
+  useEffect(()=>{
+
+  })
    useEffect(() => {
     const initiateAnimation = setTimeout(() => {
             setCount(1)
@@ -42,17 +46,19 @@ const Projects = () => {
     <section className='projects-section'>
       <div className='wrapper'>
         <h1 ref={h1Ref} className='title'>Feautured Works</h1>
-        <div className='mini-grid-desktop'>
-          <h3>Project</h3>
-          <h3>Description</h3>
-          <h3>Date</h3>
-        </div>
+        
       </div>
       <div className='projects'>
         {allProjects.map((project, projectIndex) => {
           return (
             <div key={projectIndex}>
               <MobileProject 
+                project={project} 
+                projectIndex={projectIndex}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                 />
+              <DestopProject 
                 project={project} 
                 projectIndex={projectIndex}
                 activeIndex={activeIndex}
@@ -141,70 +147,76 @@ const MobileProject = ({ project, projectIndex, activeIndex, setActiveIndex }) =
   );
 };
 
-// const DestopProject = ({ project, projectIndex }) => {
-//   const { date, desc, moreInfo, name, slides } = project;
-//   const [index, setIndex] = useState();
-//   const [activeSlide, setActiveSlide] = useState(0);
+const DestopProject = ({ project, projectIndex,activeIndex,setActiveIndex }) => {
+  const { images, title, about, date,paragraphs,tags } = project;
+  const [index, setIndex] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const projectRef=useRef()
+  const scrollProject=projectRef.current
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+  useEffect(()=>{
+    if(projectIndex==activeIndex){
+      // scrollProject.scrollIntoView({
+      //   behavior:'smooth',
+      //   block:'center'
+      // })
+    }
+  },[activeIndex])
+  return (
+    <article className='desktop-project' key={projectIndex}>
+      <div
+        className='brief'
+        onClick={() => {
+          setActiveIndex(projectIndex === activeIndex ? null : projectIndex);
+        }}
+      >
+        <h2 className='proj-name'>{title} <span>&mdash; {date}</span> </h2>
+        <h2 className='proj-desc'>{about}</h2>
+        <h2 className='proj-date'>
+          
+          <span className={projectIndex === activeIndex ? `active` : null}>
+            <BsArrowUp />
+          </span>
+        </h2>
+      </div>
+      <div ref={projectRef} className={`details desktop-down ${projectIndex === activeIndex ? `active` : null}`}>
+        <div className='slides'>
+          {images.map((slide, slideIndex) => {
+            return (
+              <img
+                src={slide}
+                alt={`slide ${slideIndex + 1}`}
+                key={slideIndex}
+                className={activeSlide === slideIndex ? `active` : ''}
+                />
+              );
+            })}
+          <div className='pagination'>
+            {images.map((_, index) => {
+              return (
+                <span
+                key={index}
+                className={activeSlide === index ? `active` : ''}
+                onClick={() => setActiveSlide(index)}
+                ></span>
+              );
+            })}
+          </div>
+        </div>
+        <div className='project-aside'>
+          <h2 className='title'>{title} </h2>
+          <h3 className='more-info'>{paragraphs[0]}</h3>
+          <Link className='view-details-desktop' to={`/project/${title.toLowerCase()}`}>View</Link>
+        </div>
+      </div>
+    </article>
+  );
+};
 
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setActiveSlide(activeSlide + 1);
-//     }, 3000);
-//     if (activeSlide > slides.length - 1) {
-//       setActiveSlide(0);
-//     }
-//     return () => clearInterval(interval);
-//     // eslint-disable-next-line
-//   }, [activeSlide]);
-
-//   return (
-//     <article className='desktop-project' key={projectIndex}>
-//       <div
-//         className='brief'
-//         onClick={() => {
-//           setIndex(projectIndex);
-//           if (index === projectIndex) {
-//             setIndex();
-//           }
-//         }}
-//       >
-//         <h2 className='proj-name'>{name}</h2>
-//         <h2 className='proj-desc'>{desc}</h2>
-//         <h2 className='proj-date'>
-//           {date}{' '}
-//           <span className={projectIndex === index ? `active` : null}>
-//             <BsArrowUp />
-//           </span>
-//         </h2>
-//       </div>
-//       <div className={`details ${projectIndex === index ? `active` : null}`}>
-//         <div className='slides'>
-//           {slides.map((slide, slideIndex) => {
-//             return (
-//               <img
-//                 src={slide}
-//                 alt='slide 1'
-//                 key={slideIndex}
-//                 className={activeSlide === slideIndex ? `active` : null}
-//               />
-//             );
-//           })}
-//           <div className='pagination'>
-//             {slides.map((_, index) => {
-//               return (
-//                 <span
-//                   key={index}
-//                   className={activeSlide === index ? `active` : null}
-//                   onClick={() => setActiveSlide(index)}
-//                 ></span>
-//               );
-//             })}
-//           </div>
-//         </div>
-//         <h3 className='more-info'>{moreInfo}</h3>
-//       </div>
-//     </article>
-//   );
-// };
 
 export default Projects;
