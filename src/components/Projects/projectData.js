@@ -1,7 +1,7 @@
 import skySkillHub from '../../assets/skyskilla.webp'
 import skySkillHub1 from '../../assets/skyskillb.webp'
 import skySkillHub2 from '../../assets/skyskillc.webp'
-import skySkillHub3 from '../../assets/skyskilla.webp'
+import onicon from '../../assets/onicon.com.ng_.webp'
 import onicon1 from '../../assets/onicona.webp'
 import onicon2 from '../../assets/oniconb.webp'
 import onicon3 from '../../assets/oniconc.webp'
@@ -46,7 +46,7 @@ import optimize2 from '../../assets/optimize.webp'
 
 export let allProjects = [
     {
-        images:[skySkillHub,skySkillHub1,skySkillHub2,skySkillHub3],
+        images:[skySkillHub,skySkillHub1,skySkillHub2],
         title:"SkySkillHub",
         date:2023,
         about:"A learning Management system",
@@ -60,7 +60,7 @@ export let allProjects = [
         link:"https://skyskillhub.com"  
     },
     {
-        images: [onicon1, onicon2, onicon3,onicon4],
+        images: [onicon,onicon1, onicon2, onicon3,onicon4],
         title: "Onicon",
         date:2023,
         about:"A Nigerian engineering firm",
@@ -199,7 +199,7 @@ export let allProjects = [
         link: "https://resume-vantage.vercel.app/"
     },
     {
-        images: [optimize1, optimize2,optimize1],
+        images: [optimize1, optimize2],
         title: "Optimize",
         date: 2022,
         about: "Optimize heavy images to lossless webp.",

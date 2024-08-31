@@ -3,11 +3,43 @@ import headerImg from '../../assets/y.webp';
 import headerImg2 from '../../assets/h.webp';
 import headerImg3 from '../../assets/mom2.webp';
 import headerImg4 from '../../assets/z.webp';
+import headerImg5 from '../../assets/oniconc.webp'
+import headerImg6 from '../../assets/flo6.webp'
+import headerImg7 from '../../assets/flo(5).webp'
+
 import { allProjects } from '../Projects/projectData';
 import gsap from 'gsap';
+import useScrollBlock from '../../customHooks/preventScroll'
+
 
 const Header = () => {
-  
+  let images=[headerImg,headerImg2,headerImg3,headerImg4]
+  const [isDesktop,setIsDesktop]=useState(window.innerWidth>768);
+  if(isDesktop){
+    images=[headerImg5,headerImg,headerImg7,headerImg4]
+  }  
+  const animationInterval = 8000
+  const preloaderDoneTime= 8000
+  const [blockScroll, allowScroll] = useScrollBlock();
+
+  useEffect(() => {
+    // console.log(blockScroll)
+    // Block scrolling when the component mounts
+    blockScroll();
+    // Allow scrolling again after some seconds
+    const timer = setTimeout(() => {
+      allowScroll();
+    }, preloaderDoneTime);
+
+    // Clean up: allow scrolling if the component unmounts before 3 seconds
+    return () => {
+      clearTimeout(timer);
+      allowScroll();
+    };
+  }, []);
+
+
+
   //A list of titles: to be used later?
   let allTitles = allProjects.map((item)=>{
     return(item.title)
@@ -36,7 +68,7 @@ const Header = () => {
   const p3Cover = p3CoverREf.current
   const p4Cover = p4CoverREf.current
 
-  const [isDesktop,setIsDesktop]=useState(window.innerWidth>768);
+  
   useEffect(()=>{
     const handleResize=()=>setIsDesktop(window.innerWidth>768)
     window.addEventListener('resize',handleResize)
@@ -52,24 +84,27 @@ const Header = () => {
   gsap.to(preloader, {
     opacity:'0',
     duration:2,
-    delay:6,
+    delay:5,
+  })
+  gsap.to(preloader, {
+    filter:'blur(2px)',
+    delay:2.5,
+    duration:1
   })
   gsap.to(preloader, {
     display:'none',
-    delay:8,
+    delay:7,
   })
   gsap.to(preloader, {
     background:primaryColor,
-    delay:4,
+    delay:3,
     duration:1,
-    ease:"Power1.in",
   })
   gsap.fromTo(header, {
     filter:'grayscale(100%) blur(3px)',
   },{
-    ease:"Power1.in",
-    delay:8,
-    duration:1,
+    delay:6,
+    duration:.4,
     filter:'grayscale(0) blur(0px)',
     opacity:1
   })
@@ -80,29 +115,29 @@ const Header = () => {
     translateX:20,
   },{
 
-    duration:3,
+    duration:2,
     translateX:-20,
   })
   gsap.to(p1, {
     opacity:0,
     duration:1,
-    delay:2
+    delay:1
   })
   
 
   //Two
   gsap.fromTo(p2, {
     translateX:-20,
-    filter:'blur(2px)'
+    filter:'blur(1px)'
   },{
 
-    duration:3,
+    duration:1,
     translateX:0,
   })
   gsap.to(p2, {
     opacity:0,
     duration:1,
-    delay:2
+    delay:1
   })
 
 
@@ -111,7 +146,7 @@ const Header = () => {
     translateX:20,
   },{
 
-    duration:3,
+    duration:2,
     translateX:-50,
   })
 
@@ -125,37 +160,37 @@ const Header = () => {
   gsap.fromTo(p4, {
     translateX:-70,
   },{
-    duration:3,
+    duration:2,
     translateX:-80,
   })
 
   gsap.to(p4, {
     background:primaryColor,
     color:secondaryColor,
-    delay:4,
+    delay:3,
     duration:1
   })
   
   //cover one
   gsap.to(p1Cover, {
     width:0,
-    duration:3
+    duration:2
   })
   //cover two
   gsap.to(p2Cover, {
     width:0,
-    duration:3,
+    duration:2,
   })
   //cover three
   gsap.to(p3Cover, {
     width:0,
-    duration:3,
+    duration:2,
   })
   
   //cover four
   gsap.to(p4Cover, {
     width:0,
-    duration:3,
+    duration:2,
   })
   
 
@@ -167,7 +202,8 @@ const Header = () => {
   allTitles=['','','']
   
 
-  const images=[headerImg,headerImg2,headerImg3,headerImg4]
+
+  
   // Arrays for dynamic text data
   const data=[
     {
@@ -181,7 +217,7 @@ const Header = () => {
     },
     {
       title:"Stack.",
-      description:`I have built 20+ frontends with <em>ReactJS</em>`,
+      description:`I have built 20+ frontends with <em>React</em> and <em>NextJS</em>`,
       image:images[1],
       showTitle:true,
       showDescription:false,
@@ -212,7 +248,7 @@ const Header = () => {
   const [currentIndexText, setCurrentIndexText] = useState(0);
   const [isAnimatingText, setIsAnimatingText] = useState(false);
 
-  const animationInterval = 8000
+  
   const imgRefs=useRef([])  
 
 
@@ -321,6 +357,9 @@ const Header = () => {
        </div>
       </div>
     </section>
+    <div className='grain-effect'>
+
+    </div>
     <header ref={headerRef} className='header-section'>
       
       {data.map((datum,index)=>{

@@ -90,11 +90,11 @@
     }
     .header-img.active{
         transform: scale(1.2);
-        width: 50% !important;
+        // width: 50% !important;
     }
     
     .header-img.inactive {
-        width: 50% !important; 
+        // width: 50% !important; 
         transform: scale(1.1);
     }
     
@@ -135,7 +135,7 @@
         .row {
             padding: 0.5rem 17px;
             height: 170px;
-            border-bottom: 1px solid $secondaryColor;
+            // border-bottom: 1px solid $secondaryColor;
             position: relative;
             overflow: hidden;
             width: 100%;
@@ -438,6 +438,7 @@ img.inactive {
         .preloader-p4
         {
             min-width: fit-content;
+            font-weight: 400;
             background: $secondaryColor;
         }        
         .preloader-cover1{
@@ -482,4 +483,21 @@ img.inactive {
             left:10;
         }        
     }
+}
+
+.no-scroll {
+    overflow: hidden !important;
+}
+
+
+.grain-effect {
+  position: absolute;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.2;
+  z-index: 9999;
 }

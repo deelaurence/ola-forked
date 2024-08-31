@@ -6,10 +6,11 @@
     background-color: $primaryColor;
     h1 {
       overflow: hidden;
+        opacity: 0.7;
         font-size: 7vw;
         font-weight: 400;
         line-height: 1.2;
-        width: 100vw;
+        width: 90vw;
         z-index: 5;
     }
     .info2{
@@ -20,7 +21,7 @@
             right:50vw;
             top:0px;
             height: 100%;
-            width: 100vw;
+            width: 90vw;
         }
     }
     .info1{
@@ -56,6 +57,7 @@
     h3{
         padding: 20px;
         font-weight: 400;
+        opacity: .8;
         border-bottom:1px solid $secondaryColor;
         border-top:1px solid $secondaryColor;
         font-size: 2rem;

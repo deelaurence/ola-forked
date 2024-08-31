@@ -40,7 +40,7 @@ const Info = () => {
         }, 1500)
       gsap.fromTo(h1, {
           xPercent:50,
-      },
+      }, 
           {
               xPercent:0,
               scrollTrigger: {

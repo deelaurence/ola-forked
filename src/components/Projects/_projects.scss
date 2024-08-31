@@ -28,7 +28,7 @@
 
         .mob-project {
             padding: 1rem 14px;
-            border-top: 1px solid #EEE9CC;
+            border-top: 1px solid $secondaryColor;
 
             .title {
                 font-size: 1.3rem;
@@ -232,7 +232,7 @@
             }
 
             .desktop-project {
-                border-top: 2px solid $secondaryColor;
+                border-top: 2px solid $primaryColor;
                 display: block;
 
                 .brief {
@@ -271,13 +271,14 @@
                     .proj-desc {
                         font-size: 1.1rem !important;
                         font-weight: 400;
+                        opacity: 0;
                         display: flex;
                         width: fit-content;
                         color: $secondaryColor;
                         // font-style: italic;
                         // border-radius: 40px;
-                        opacity: .8;
-                        text-decoration: underline;
+                        opacity: 0;
+                        // text-decoration: underline;
                         align-items: flex-end;
                     }
 
@@ -297,8 +298,10 @@
                     }
 
                     .more-info {
-                        font-size: 1rem;
+                        font-size: 1rem !important;
                         font-weight: 400;
+                        padding-right: 5rem;
+                        opacity: .8;
                     }
 
                     &.active {

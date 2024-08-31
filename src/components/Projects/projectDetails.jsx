@@ -53,11 +53,11 @@ export const Details=()=>{
                 <Link className={`${prevLink?"":"disable"}  details-link`} to={`/project/${prevLink??name}`} > <BsArrowLeft/> Back  </Link>
             </div>
             <p className="paragraph-details">{paragraphs[0]}</p>
-            <img src={images[0]} alt="" />
+            <img src={images[0]} alt={`${name} Image one`} />
             <p className="paragraph-details">{paragraphs[1]}</p>
-            <img src={images[1]} alt="" />
+            <img src={images[1]} alt={`${name} Image two`} />
             <p className="paragraph-details">{paragraphs[2]}</p>
-            <img src={images[2]} alt="" />
+            {images[2]&&<img src={images[2]} alt={`${name} Image three`} />}
             <div className="links-cont">
                 <a className="details-link" href={link}>Visit live <BsArrowUpRightCircle/> </a>
                 <Link className={`${nextLink?"":"disable"}  details-link`} to={`/project/${nextLink??name}`} >Next <BsArrowRight/> </Link>
