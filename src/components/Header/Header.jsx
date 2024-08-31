@@ -1,17 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import headerImg from '../../assets/myreel.gif';
-import headerImg2 from '../../assets/projects.gif';
-import headerImg3 from '../../assets/slide2.webp';
-import headerImg4 from '../../assets/slide3.webp';
+import React, {useRef, useEffect, useState,useLayoutEffect } from 'react';
+import headerImg from '../../assets/y.webp';
+import headerImg2 from '../../assets/h.webp';
+import headerImg3 from '../../assets/mom2.webp';
+import headerImg4 from '../../assets/z.webp';
 import { allProjects } from '../Projects/projectData';
-
+import gsap from 'gsap';
 
 const Header = () => {
-  const images = [headerImg2, headerImg2, headerImg2, headerImg2];
+  
+  //A list of titles: to be used later?
   let allTitles = allProjects.map((item)=>{
     return(item.title)
   })
 
+  const preloaderREf=useRef(null)
+  const p1REf=useRef(null)
+  const p2REf=useRef(null)
+  const p3REf=useRef(null)
+  const p4REf=useRef(null)
+  const p1CoverREf=useRef(null)
+  const p2CoverREf=useRef(null)
+  const p3CoverREf=useRef(null)
+  const p4CoverREf=useRef(null)
+  const headerRef=useRef(null)
+  const imgRef=useRef(null)
+  const img=imgRef.current
+  const header=headerRef.current
+  const preloader = preloaderREf.current
+  const p1 = p1REf.current
+  const p2 = p2REf.current
+  const p3 = p3REf.current
+  const p4 = p4REf.current
+  const p1Cover = p1CoverREf.current
+  const p2Cover = p2CoverREf.current
+  const p3Cover = p3CoverREf.current
+  const p4Cover = p4CoverREf.current
 
   const [isDesktop,setIsDesktop]=useState(window.innerWidth>768);
   useEffect(()=>{
@@ -21,22 +44,145 @@ const Header = () => {
   })
 
 
-  allTitles=['*','*','*']
-  // Arrays for dynamic text d'ata
+
+  //GSAP for preloader
+  const primaryColor='#1E1915';
+  const secondaryColor='#EEE9CC';
+  useEffect(()=>{
+  gsap.to(preloader, {
+    opacity:'0',
+    duration:2,
+    delay:6,
+  })
+  gsap.to(preloader, {
+    display:'none',
+    delay:8,
+  })
+  gsap.to(preloader, {
+    background:primaryColor,
+    delay:4,
+    duration:1,
+    ease:"Power1.in",
+  })
+  gsap.fromTo(header, {
+    filter:'grayscale(100%) blur(3px)',
+  },{
+    ease:"Power1.in",
+    delay:8,
+    duration:1,
+    filter:'grayscale(0) blur(0px)',
+    opacity:1
+  })
+
+
+  //One
+  gsap.fromTo(p1, {
+    translateX:20,
+  },{
+
+    duration:3,
+    translateX:-20,
+  })
+  gsap.to(p1, {
+    opacity:0,
+    duration:1,
+    delay:2
+  })
+  
+
+  //Two
+  gsap.fromTo(p2, {
+    translateX:-20,
+    filter:'blur(2px)'
+  },{
+
+    duration:3,
+    translateX:0,
+  })
+  gsap.to(p2, {
+    opacity:0,
+    duration:1,
+    delay:2
+  })
+
+
+  //Three
+  gsap.fromTo(p3, {
+    translateX:20,
+  },{
+
+    duration:3,
+    translateX:-50,
+  })
+
+  gsap.to(p3,{
+    opacity:0,
+    delay:4
+  })
+
+
+  //Four
+  gsap.fromTo(p4, {
+    translateX:-70,
+  },{
+    duration:3,
+    translateX:-80,
+  })
+
+  gsap.to(p4, {
+    background:primaryColor,
+    color:secondaryColor,
+    delay:4,
+    duration:1
+  })
+  
+  //cover one
+  gsap.to(p1Cover, {
+    width:0,
+    duration:3
+  })
+  //cover two
+  gsap.to(p2Cover, {
+    width:0,
+    duration:3,
+  })
+  //cover three
+  gsap.to(p3Cover, {
+    width:0,
+    duration:3,
+  })
+  
+  //cover four
+  gsap.to(p4Cover, {
+    width:0,
+    duration:3,
+  })
+  
+
+  },[preloader,p1Cover,p2,p3,p3Cover,p2Cover,p1,p2])
+
+  
+  //setting all titles to empty makes sure nothing is
+  //animated in the first and last row
+  allTitles=['','','']
+  
+
+  const images=[headerImg,headerImg2,headerImg3,headerImg4]
+  // Arrays for dynamic text data
   const data=[
     {
-      title:"Hey.",
-      description:"My name is Odunayo <em>but wait...</em>",
-      image:headerImg2,
+      title:"Hi.",
+      description:"My name is <em>Odunayo</em>",
+      image:images[0],
       showTitle:false,
       showDescription:false,
       alternateText:allTitles,
-      showImage:false,
+      showImage:true,
     },
     {
       title:"Stack.",
       description:`I have built 20+ frontends with <em>ReactJS</em>`,
-      image:headerImg2,
+      image:images[1],
       showTitle:true,
       showDescription:false,
       showImage:true
@@ -44,7 +190,7 @@ const Header = () => {
     {
       title:"&",
       description:"I have engineered and deployed over 30 APIs and business logics with <em>Python</em> and <em>nodeJS</em>",
-      image:headerImg2,
+      image:images[2],
       showTitle:false,
       showDescription:true,
       showImage:true
@@ -52,7 +198,7 @@ const Header = () => {
     {
       title:"Work.",
       description:"I have an experience of <em>4 years</em> as a developer",
-      image:headerImg2,
+      image:images[3],
       showTitle:false,
       showDescription:false,
       showImage:true,
@@ -66,8 +212,55 @@ const Header = () => {
   const [currentIndexText, setCurrentIndexText] = useState(0);
   const [isAnimatingText, setIsAnimatingText] = useState(false);
 
+  const animationInterval = 8000
+  const imgRefs=useRef([])  
+
+
+  //Change Image
+  useEffect(()=>{
+    if(isAnimating===true){
+    
+    const timeoutId = setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, animationInterval/4);
+    return () => clearTimeout(timeoutId);
+    }
+  },[isAnimating])
+  
+
+
+  
+  //toggle Image Opacity 
+  useEffect(()=>{
+    if(isAnimating===true){
+    const timeoutId = setTimeout(() => {
+      
+      imgRefs.current.forEach((img)=>{
+        if(img){
+          img.style.opacity="0"
+        }
+    })
+    const timeoutId2 = setTimeout(() => {
+      
+      imgRefs.current.forEach((img)=>{
+        if(img){
+          img.style.opacity="1"
+        }
+      })
+    }, animationInterval/4);
+    return () => clearTimeout(timeoutId2)
+
+    }, animationInterval/4);
+    
+    return () =>clearTimeout(timeoutId);
+    }
+  },[isAnimating])
+  
+
 
  
+
+  //RUN first animation immediately without delay
   useEffect(() => {
       setIsAnimating(true);
       setIsAnimatingText(true);
@@ -75,20 +268,22 @@ const Header = () => {
   
   
   
+  //Animate Blind
   useEffect(() => {
-    
     const intervalId = setInterval(() => {
       setIsAnimating(false);
       
       setTimeout(() => {
         setIsAnimating(true);
-      }, 3000); // Same duration as the animation time
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 6000);
-
+      }, animationInterval/2); // Same duration as the animation time
+    }, animationInterval);
+    
     return () => clearInterval(intervalId);
   }, [images.length]);
+  
+  
 
+  //ANIMATE TEXT
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIsAnimatingText(false);
@@ -96,19 +291,44 @@ const Header = () => {
       setTimeout(() => {
         setCurrentIndexText((prevIndex) => (prevIndex + 1) % images.length);
         setIsAnimatingText(true);
-      }, 3000); 
-    }, 6000);
-
+      }, animationInterval/2); 
+    }, animationInterval);
+    
     return () => clearInterval(intervalId);
   }, [images.length]);
-
+        
+        
   return (
-    <header className='header-section'>
+    
+  <>
+    <section ref={preloaderREf} className='preloader'>
+      <div>
+       <div>
+        <p ref={p1CoverREf} className='preloader-cover1'></p>
+        <p ref={p1REf} className='preloader-p1'>Welcome</p>
+       </div>
+       <div>
+        <p ref={p2CoverREf} className='preloader-cover2'></p>
+        <p ref={p2REf} className='preloader-p2'>Welcome</p>
+       </div>
+       <div>
+        <p ref={p3CoverREf} className='preloader-cover3'></p>
+        <p ref={p3REf} className='preloader-p3'>Welcome</p>
+       </div>
+       <div>
+        <p ref={p4CoverREf} className='preloader-cover4'></p>
+        <p ref={p4REf} className='preloader-p4'>Welcome</p>
+       </div>
+      </div>
+    </section>
+    <header ref={headerRef} className='header-section'>
+      
       {data.map((datum,index)=>{
         return(
          <div key={index} className='row '>
          {datum.showImage&&<img
            className={`img-${index+1} header-img ${isAnimating ? 'inactive' : 'active'}`}
+           ref={(el)=>(imgRefs.current[index]=el)}
            src={data[currentIndex].image}
            alt='header'
          />}
@@ -132,6 +352,7 @@ const Header = () => {
        </div>
       )})}
     </header>
+  </>
   );
 };
 
