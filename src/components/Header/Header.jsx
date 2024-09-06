@@ -83,27 +83,27 @@ const Header = () => {
   useEffect(()=>{
   gsap.to(preloader, {
     opacity:'0',
-    duration:2,
-    delay:5,
+    duration:1,
+    delay:4,
   })
   gsap.to(preloader, {
     filter:'blur(2px)',
-    delay:2.5,
+    delay:1.5,
     duration:1
   })
   gsap.to(preloader, {
     display:'none',
-    delay:7,
+    delay:6,
   })
   gsap.to(preloader, {
     background:primaryColor,
-    delay:3,
+    delay:2,
     duration:1,
   })
   gsap.fromTo(header, {
     filter:'grayscale(100%) blur(3px)',
   },{
-    delay:6,
+    delay:5,
     duration:.4,
     filter:'grayscale(0) blur(0px)',
     opacity:1
@@ -115,13 +115,13 @@ const Header = () => {
     translateX:20,
   },{
 
-    duration:2,
+    duration:1,
     translateX:-20,
   })
   gsap.to(p1, {
     opacity:0,
     duration:1,
-    delay:1
+    
   })
   
 
@@ -131,13 +131,13 @@ const Header = () => {
     filter:'blur(1px)'
   },{
 
-    duration:1,
+    duration:.5,
     translateX:0,
   })
   gsap.to(p2, {
     opacity:0,
     duration:1,
-    delay:1
+    
   })
 
 
@@ -146,13 +146,13 @@ const Header = () => {
     translateX:20,
   },{
 
-    duration:2,
+    duration:1,
     translateX:-50,
   })
 
   gsap.to(p3,{
     opacity:0,
-    delay:4
+    delay:3
   })
 
 
@@ -160,41 +160,41 @@ const Header = () => {
   gsap.fromTo(p4, {
     translateX:-70,
   },{
-    duration:2,
+    duration:1,
     translateX:-80,
   })
 
   gsap.to(p4, {
     background:primaryColor,
     color:secondaryColor,
-    delay:3,
+    delay:2,
     duration:1
   })
   
   //cover one
   gsap.to(p1Cover, {
     width:0,
-    duration:2
+    duration:1
   })
   //cover two
   gsap.to(p2Cover, {
     width:0,
-    duration:2,
+    duration:1,
   })
   //cover three
   gsap.to(p3Cover, {
     width:0,
-    duration:2,
+    duration:1,
   })
   
   //cover four
   gsap.to(p4Cover, {
     width:0,
-    duration:2,
+    duration:1,
   })
   
 
-  },[preloader,p1Cover,p2,p3,p3Cover,p2Cover,p1,p2])
+  },[preloader])
 
   
   //setting all titles to empty makes sure nothing is
