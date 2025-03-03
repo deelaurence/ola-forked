@@ -5,7 +5,7 @@ import { About } from "./About/About";
 const Home = () => {
   return (
     <section className='projects-section'>
-     <Header />
+      <Header />
       <Info />
       {/* <Skills /> */}
       {/* <Shapes /> */}

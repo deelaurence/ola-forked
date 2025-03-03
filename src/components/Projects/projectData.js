@@ -40,6 +40,14 @@ import resumevantage2 from '../../assets/resume.webp'
 import optimize from '../../assets/optimize.webp'
 import optimize1 from '../../assets/optimize1.webp'
 import optimize2 from '../../assets/optimize.webp'
+import humanHairShop1 from '../../assets/thhsn.webp'
+import humanHairShop2 from '../../assets/thhsn2.webp'
+import humanHairShop3 from '../../assets/thhsn3.webp'
+import humanHairShop4 from '../../assets/thhsn4.webp'
+import humanHairShop5 from '../../assets/thhsn5.webp'
+import humanHairShop6 from '../../assets/thhsn6.webp'
+import humanHairShop7 from '../../assets/thhsn7.webp'
+import humanHairShop8 from '../../assets/thhsn8.webp'
 
 
 
@@ -58,6 +66,21 @@ export let allProjects = [
         ],
         tags:['NodeJS','Backend','MongoDB','Python','Paystack','SwaggerDocs'],  
         link:"https://skyskillhub.com"  
+    },
+    {
+        images: [humanHairShop1, humanHairShop2, humanHairShop6, humanHairShop4, humanHairShop5, humanHairShop3, humanHairShop7, humanHairShop8],
+        title: "The Human Hair Shop NG",
+        date: 2025,
+        about: "An e-commerce platform for premium human hair products",
+        role: "Fullstack Developer",
+        paragraphs: [
+            "I worked as a full-stack developer on the Human Hair Shop, an e-commerce platform designed for selling premium human hair products. The platform provided a seamless shopping experience, allowing customers to browse, purchase, and track their orders efficiently.",
+            "On the backend, I developed the API using Express.js, ensuring fast and scalable server-side logic. The frontend was built with React.js, providing a smooth and interactive user interface. I integrated Paystack to support international payments, enabling secure and reliable transactions for customers across different regions.",
+            "One of the key features of the platform was an advanced order tracking system, which allowed customers to monitor their purchases in real-time. Additionally, I developed an interactive admin panel that enabled store owners to manage inventory, track sales, and analyze business performance effectively.",
+            "Throughout the project, I followed best practices for API development, security, and performance optimization, ensuring a high-quality and scalable solution for the business."
+        ],
+        tags: ['ReactJS', 'ExpressJS', 'Fullstack', 'E-commerce', 'Paystack', 'Order Tracking', 'Admin Panel'],
+        link: "https://thehumanhairshopng.com"
     },
     {
         images: [onicon,onicon1, onicon2, onicon3,onicon4],

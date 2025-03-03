@@ -71,7 +71,7 @@ const Info = () => {
     <section className='info-section'>
       <div className='info1'>
       <h1 ref={h1Ref} className='h1'>
-        I have <em>4 years*</em> fullstack web experience using React, MongoDB, NodeJS, Python(Django) and postgreSQL 
+        I have <em>5 years*</em> fullstack web experience using React, MongoDB, NodeJS, Python(Django) and postgreSQL 
       </h1>
       </div>
       <div className='info2'>

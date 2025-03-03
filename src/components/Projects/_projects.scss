@@ -155,6 +155,7 @@
                 img {
                     position: absolute;
                     height: auto;
+                    max-height: 100%;
                     top: 0;
                     left: 0;
                     filter: grayscale(60%);
