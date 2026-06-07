@@ -71,12 +71,12 @@ const Info = () => {
     <section className='info-section'>
       <div className='info1'>
       <h1 ref={h1Ref} className='h1'>
-        I have <em>5 years*</em> fullstack web experience using React, MongoDB, NodeJS, Python(Django) and postgreSQL 
+        I have <em>6+ years*</em> of fullstack web experience using React, MongoDB, NodeJS, Python(Django) and postgreSQL 
       </h1>
       </div>
       <div className='info2'>
       <h1 className='h2'>
-        I have 4 years fullstack web experience using React, MongoDB, NodeJS, Python(Django) and postgreSQL 
+        I have 6+ years of fullstack web experience using React, MongoDB, NodeJS, Python(Django) and postgreSQL 
         {/* I Create new Ideas and develop them with flutterwave and firebase */}
       </h1>
       </div>

@@ -233,7 +233,7 @@ const Header = () => {
     },
     {
       title:"Work.",
-      description:"I have an experience of <em>5 years</em> as a developer",
+      description:"I have <em>6+ years</em> of experience as a developer",
       image:images[3],
       showTitle:false,
       showDescription:false,

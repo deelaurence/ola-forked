@@ -50,8 +50,8 @@ export const projects = [
 
 export const navLinks={
   linkedIn:'https://www.linkedin.com/in/odunayo-alo-b48586255/',
-  blog:'https://binary-bloggy.onrender.com/',
+  blog:'https://odunayo.duckdns.org/',
   github:'https://github.com/deelaurence',
   mail:'deverenceconnect@gmail.com',
-  resume:"https://docs.google.com/document/d/1JdojcI3eHX7mpdAkzTI8Yg6w9GURWe_HGsHa3NuwK8c/pub"
+  resume:'https://docs.google.com/document/d/1ycocun6oQlXJpqEl68Vz5pT_mULNujUxw3TtwhuC8hM/edit?usp=sharing'
 }
