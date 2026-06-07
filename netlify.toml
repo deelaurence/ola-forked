@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# SPA fallback: let React Router handle client-side routes (e.g. /project/skyskillhub)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
