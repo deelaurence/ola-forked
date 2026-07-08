@@ -48,11 +48,27 @@ import humanHairShop5 from '../../assets/thhsn5.webp'
 import humanHairShop6 from '../../assets/thhsn6.webp'
 import humanHairShop7 from '../../assets/thhsn7.webp'
 import humanHairShop8 from '../../assets/thhsn8.webp'
+import sheEmpowHers1 from '../../assets/sheempowhers1.png'
+import sheEmpowHers2 from '../../assets/sheempowhers2.png'
 
 
 
 
 export let allProjects = [
+    {
+        images: [sheEmpowHers1, sheEmpowHers2],
+        title: "She EmpowHers",
+        date: 2026,
+        about: "A psychologically grounded growth app for women",
+        role: "React Native & Backend Developer",
+        paragraphs: [
+            "I worked with Benmore Technologies on She EmpowHers, a mobile app built for women navigating life transitions, identity shifts, and personal transformation. The product combines guided growth paths, reflections and journaling, an AI-supported growth companion, private community circles, and progress tracking.",
+            "I built the React Native frontend for the mobile app, integrating REST APIs for core product flows across the client experience. On the backend, I contributed to the initial FastAPI implementation and later worked through the rewrite to Go, helping preserve API contracts and keep the mobile client stable across the migration.",
+            "The project was delivered in an agile team environment at Benmore Technologies, with close collaboration between product, design, and engineering as the app moved toward launch on Google Play and the Apple App Store."
+        ],
+        tags: ['React Native', 'FastAPI', 'Golang', 'Mobile', 'Benmore Technologies'],
+        link: "https://www.sheempowhers.com/"
+    },
     {
         images:[skySkillHub,skySkillHub1,skySkillHub2],
         title:"SkySkillHub",
